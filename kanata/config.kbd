@@ -1,0 +1,98 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+
+;; define some variable for time
+;; instead of writing the actual number
+;; therefore, it will be easier to change the values
+(defvar
+  read_slow 250
+  slowest 200
+  slower 150
+  slow 125
+  normal 110
+  fast 100
+  faster 65
+  fastest 20
+)
+
+
+(defalias
+  ;; escape --> control ( tap --> hold )
+  esc_ctrl (tap-hold $fastest $faster esc lctl)
+
+  ;; home-row mods ( 'a', 's', 'd', 'f' )
+  f_key (tap-hold $slower $read_slow f lsft)
+  d_key (tap-hold $slower $read_slow d lctl)
+  s_key (tap-hold $slower $read_slow s lmet)
+
+  ;; home-row mods ( 'j', 'k', 'l', ';' )
+  j_key (tap-hold $slower $read_slow j rsft)
+  k_key (tap-hold $slower $read_slow k rctl)
+  l_key (tap-hold $slower $read_slow l rmet)
+
+
+  ;; hold <L-Alt> to open up 'symbols' layer
+  lalt_key (layer-while-held symbols)
+  ;; process the new <L-Alt> key
+  lalt_key_layer (tap-hold $slow $slowest lalt @lalt_key)
+
+  ;; hold <R-Alt> to open up 'nav' layer
+  ralt_key (layer-while-held nav)
+  ;; process the new <R-Alt> key
+  ralt_key_layer (tap-hold $fastest $faster ralt @ralt_key)
+
+  ;; hold <L-Ctrl> to open up 'nav' layer
+  lctl_key (layer-while-held media_mouse)
+  ;; process the new <L-Ctrl> key
+  lctl_key_layer (tap-hold $fastest $faster lctl @lctl_key)
+
+)
+
+
+;; layer that defines how the keys
+;; on the keyboard are physically defined
+(defsrc
+  grv   1   2   3   4   5   6   7   8   9   0   -   =   bspc
+  tab   q   w   e   r   t   y   u   i   o   p   [   ]   \
+  caps   a   s   d   f   g   h   j   k   l   ;   '   ret
+  lsft   z   x   c   v   b   n   m   ,   .   /   rsft
+  lctl   lmet   lalt   spc   ralt   rctl
+)
+
+
+(deflayer base
+  _   _   _   _   _   _   _   _   _   _   _   _   _   _
+  _   _   _   _   _   _   _   _   _   _   _   _   _   _
+  @esc_ctrl   _   @s_key   @d_key   @f_key   _   _   @j_key   @k_key   @l_key   _   _   _
+  _   _   _   _   _   _   _   _   _   _   _   _
+  @lctl_key_layer   _   @lalt_key_layer   _   @ralt_key_layer   _
+)
+
+
+(deflayer symbols
+  _   _   _   _   _   _   _   _   _   _   _   _   _   _
+  _   _   _   _   S-[   '   S-'   S-]   _   _   _   _   _   _
+  _   _   _   _   S-9   S-\   `   S-0   _   _   _   _   _
+  _   _   _   _   [   \   /   ]   _   _   _   _
+  _   _   _   _   _   _
+)
+
+
+(deflayer nav
+  _   _   _   _   _   _   _   _   _   _   _   _   _   _
+  _   _   _   pgup   home   _   _   _   _   _   _   _   _   _
+  _   C-a   C-s   pgdn   end   _   left   down   up   right   _   _   _
+  _   _   _   _   _   _   _   _   _   _   _   _
+  _   _   _   _   _   _
+)
+
+
+(deflayer media_mouse
+  _   _   _   _   _   _   _   _   _   _   _   _   _   _
+  _   _   (movemouse-up 10 5)   _   (mwheel-up 10 5)   _   _   _   _   _   _   _   _   _
+  _   (movemouse-left 10 5)   (movemouse-down 10 5)   (movemouse-right 10 5)   (mwheel-down 10 5)   _   _   mltp   mrtp   _   _   _   _
+  _   _   _   _   _   _   _   _   _   _   _   _
+  _   _   _   _   _   _
+)
