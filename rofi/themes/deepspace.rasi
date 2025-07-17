@@ -1,0 +1,336 @@
+// everything
+* {
+    BG: #0D0E11;
+    FG: #DEE4DF;
+    Black: #000000;
+    Cursor: #797F87;
+    DarkGray: #43494D;
+    Gray: #5C656A;
+    Gray1: #383838;
+    DarkRed: #E62D2D;
+    Red: #FD2121;
+    DarkGreen: #7C9F34;
+    Green: #80B918;
+    DarkYellow: #E8AA32;
+    Yellow: #FFCE1F;
+    DarkBlue: #3D8CC4;
+    Blue: #2B87FF;
+    DarkPurple: #A765CC;
+    Purple: #A14FE9;
+    DarkCyan: #21798A;
+    Cyan: #2DA2BA;
+    DarkWhite: #AAAAAA;
+    White: #CCCCCC;
+
+    // font: "Arimo Nerd Font 14";
+    font: "Maple Mono 12";
+
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+
+    background-color: transparent;
+    text-color: @FG;
+
+    highlight: bold;
+}
+
+// the actual / main window
+window {
+    location: center;
+    width: 800px;
+    // height: 550px;
+    transparency: "real";
+    background-color: rgba (13, 14, 17, 60 %);
+    border: 1px;
+    border-radius: 12px;
+    border-color: @DarkGray;
+}
+
+// the "box" inside the main window
+mainbox {
+    padding: 10px 10px 10px 10px;
+	children: [inputbar, listview, footer];
+}
+
+
+// contains the search icon and where the user enters data
+inputbar {
+    padding: 20px 2px 20px 2px;
+    children: [prompt, entry];
+}
+
+
+// our search icon
+prompt {
+    text-color: @DarkWhite;
+    vertical-align: 0.8;
+    // vertical-align: 1.0;
+}
+
+
+// where the user will actually enter data / type
+entry {
+    text-color: #C8C6C6;
+    cursor-width: 1px;
+    cursor-color: #5D5F5D;
+    // placeholder-color: #727473;
+    placeholder-color: @DarkWhite;
+    vertical-align: 0.5;
+}
+
+
+// the box that will contain the applications / commands and others
+listview {
+    border: 1px;
+    border-color: rgba (67, 73, 77, 25%);
+    columns: 1;
+    lines: 9;
+    dynamic: true;
+    cycle: true;
+    background-color: rgba (92, 101, 106, 5%);
+    border-radius: 12px;
+    padding: 6px;
+}
+
+// the actual "element" i.e application / commands or others
+element {
+    padding: 6px 0px 6px 8px;
+    border-radius: 5px;
+    border-color: #FFFFFF;
+}
+
+
+// when we are selecting that "element"
+element selected {
+    border-radius: 9px;
+    background-color: #2D2F2E;
+    text-color: white;
+}
+
+
+// the text that is displayed next to the element
+element-text {
+    // text-color: #C8C6C6;
+    text-color: @White;
+	vertical-align: 0.5;
+}
+
+// how the text will look when we have selected the specific "element"
+element-text selected {
+    text-color: @FG;
+}
+
+// the icon that will represent the application / command or others
+element-icon {
+    size: 24px;
+	background-color: transparent;
+}
+
+
+// I mean its called the footer for a reason
+footer {
+	children: [textbox-1, spacer, keys-info];
+	expand:false;
+	orientation: horizontal;
+    background-color: rgba (92, 101, 106, 5%);
+    border-color: rgba (67, 73, 77, 25%);
+	border: 1px;
+    border-radius: 12px;
+    padding: 4px 6px 4px 6px;
+    margin: 10px 0px 0px 0px;
+}
+
+
+// our spacer between our logo and the text inside the footer
+spacer {
+	str: "";
+	expand: true;
+	background-color: transparent;
+}
+
+
+// our logo image what is found inside our footer
+textbox-1 {
+    expand: false;
+    str: "󰣇 ";
+	background-color: transparent;
+    // actual blue color for arch linux
+	// text-color: rgba (30, 136, 229, 60 %);
+	text-color: rgba (43, 135, 255, 60 %);
+	vertical-align: 0.5;
+    margin: 10px;
+}
+
+
+// WARNING: testing
+keys-info {
+	children: [
+				// Launch
+				textbox-return-text, textbox-return-icon,
+				textbox-separator,
+				
+				// Left
+				textbox-left-text, textbox-command-icon, textbox-left-icon,
+				textbox-separator,
+				
+				// Down
+				textbox-down-text, textbox-command-icon, textbox-down-icon,
+				textbox-separator,
+				
+				// Up
+				textbox-up-text, textbox-command-icon, textbox-up-icon,
+				textbox-separator,
+			
+				// Right
+				textbox-right-text, textbox-command-icon, textbox-right-icon];
+
+	expand: false;
+	vertical-align: 0.5;
+	orientation: horizontal;
+	spacing: 0px;
+    background-color: transparent; 
+}
+
+
+textbox-return-text {
+	str: "Run";
+	expand: false;
+	text-color: @White; 
+	vertical-align: 0.5;
+	padding: 0 4px;
+	border-radius: 4px;
+    background-color: transparent; 
+}
+
+textbox-return-icon {
+	str: " 󰌑 ";
+	expand: false;
+	// text-color: rgba (255, 255, 255, 0.6);
+	text-color: @FG;
+	vertical-align: 0.5;
+	margin: 8px 0;
+	padding: 2px 10px 0px 5px;
+	border-radius: 6px;
+    background-color: rgba (92, 101, 106, 12%);
+    // background-color: red;
+}
+
+textbox-command-icon {
+	str: "  ";
+	expand: false;
+	text-color: @FG; 
+	vertical-align: 0.5;
+	margin: 8px 0;
+	padding: 2px 10px 0px 5px;
+	border-radius: 4px;
+    // background-color: rgba (92, 101, 106, 5%);
+    background-color: rgba (92, 101, 106, 12%);
+}
+
+textbox-down-text {
+	str: "";
+	expand: false;
+	text-color: white; 
+	vertical-align: 0.5;
+	border-radius: 4px;
+    background-color: transparent; 
+	margin: 8px 0;
+	padding: 2px 10px 0px 5px;
+}
+
+
+textbox-down-icon {
+	str: " J ";
+	expand: false;
+	text-color: white; 
+	vertical-align: 0.5;
+	margin: 8px 2px 8px 6px;
+	padding: 0 4px;
+	border-radius: 4px;
+    // background-color: rgba (92, 101, 106, 5%);
+    background-color: rgba (92, 101, 106, 12%);
+}
+
+
+textbox-up-text {
+	str: "";
+	expand: false;
+	text-color: white; 
+	vertical-align: 0.5;
+	border-radius: 4px;
+    background-color: transparent; 
+	margin: 8px 0;
+	padding: 2px 10px 0px 5px;
+}
+
+
+textbox-up-icon {
+	str: " K ";
+	expand: false;
+	text-color: white; 
+	vertical-align: 0.5;
+	margin: 8px 2px 8px 6px;
+	padding: 0 4px;
+	border-radius: 4px;
+    // background-color: rgba (92, 101, 106, 5%);
+    background-color: rgba (92, 101, 106, 12%);
+}
+textbox-left-text {
+	str: "";
+	expand: false;
+	text-color: white; 
+	vertical-align: 0.5;
+	border-radius: 4px;
+    background-color: transparent; 
+	margin: 8px 0;
+	padding: 2px 10px 0px 5px;
+}
+
+
+textbox-left-icon {
+	str: " H ";
+	expand: false;
+	text-color: white; 
+	vertical-align: 0.5;
+	margin: 8px 2px 8px 6px;
+	padding: 0 4px;
+	border-radius: 4px;
+    // background-color: rgba (92, 101, 106, 5%);
+    background-color: rgba (92, 101, 106, 12%);
+}
+
+
+textbox-right-text {
+	str: "";
+	expand: false;
+	text-color: white; 
+	vertical-align: 0.5;
+	border-radius: 4px;
+    background-color: transparent; 
+	margin: 8px 0;
+	padding: 2px 10px 0px 5px;
+}
+
+
+textbox-right-icon {
+	str: " L ";
+	expand: false;
+	text-color: white; 
+	vertical-align: 0.5;
+	margin: 8px 2px 8px 6px;
+	padding: 0 4px;
+	border-radius: 4px;
+    // background-color: rgba (92, 101, 106, 5%);
+    background-color: rgba (92, 101, 106, 12%);
+}
+
+
+textbox-separator {
+	str: "|";
+	expand: true;
+	background-color: transparent;
+	vertical-align: 0.5;
+    text-color: @DarkGray;
+	margin: 2px;
+}

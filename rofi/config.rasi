@@ -1,0 +1,14 @@
+configuration{
+	
+	display-drun: "  ";
+	display-run: "  ";
+	display-emoji: "     ";
+	display-calc: "  󰍘 ";
+	drun-display-format: "{icon} {name}";
+	show-icons: true;
+    icon-theme: "Papirus-Dark";
+	modi: "run,drun,emoji,calc";
+
+}
+
+@theme "~/.config/rofi/themes/deepspace.rasi"
