@@ -1,0 +1,99 @@
+* {
+  /* font-family: "Liga SFMonoNerdFont", "JetBrainsMono Nerd Font Propo"; */
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 16px;
+  min-height: 28px;
+  min-width: 28px;
+  border: none;
+  border-radius: 6px;
+  transition: none;
+}
+
+window#waybar {
+    background-color: rgba(136, 136, 136, 0.2);
+}
+
+#workspaces button {
+  padding: 2px;
+  margin: 6px 6px 6px 0px;
+  color: #DEE4DF;
+}
+
+#workspaces button:hover {
+  color: #CCCCCC;
+  background-color: rgba(136, 136, 136, 0.5);
+  font-weight: 700;
+}
+
+#workspaces button.active {
+  color: #CCCCCC;
+  background-color: rgba(136, 136, 136, 0.5);
+  font-weight: 700;
+}
+
+
+#custom-logo {
+  margin: 6px 12px 6px 6px;
+  color: #DEE4DF;
+}
+
+
+#custom-logo:hover {
+  margin: 6px 12px 6px 6px;
+  color: #1E88E5;
+}
+
+tooltip {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px #0D0E11;
+    color: #DEE4DF;
+    padding: 6px;
+}
+
+
+#clock {
+    margin: 6px 12px 6px 6px;
+    color: #DEE4DF;
+}
+
+
+#tray,
+#pulseaudio,
+#network,
+#power-profiles-daemon,
+#cpu,
+#memory,
+#backlight,
+#battery {
+    margin: 6px 0px 6px 10px;
+    color: #DEE4DF;
+}
+
+
+#temperature {
+    margin: 6px 12px 6px 12px;
+    color: #DEE4DF;
+}
+
+
+/* WARNING: still need to finalise the colours as DeepSpace does not have 'Orange' */
+#battery.warning {
+    color: #21798A;
+}
+
+
+#battery.critical {
+    color: #E8AA32;
+}
+
+
+#battery.urgent {
+    font-weight: 700;
+    color: #E62D2D;
+}
+
+
+#temperature.critical {
+    font-weight: 700;
+    color: #E62D2D;
+}
