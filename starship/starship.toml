@@ -1,7 +1,8 @@
-# set the new colour palette
+
+# == Theme ==
 palette = 'deepspace'
 
-# define the actual prompt
+# == Defini Prompt Style ==
 format="""
 $username\
 $directory\
@@ -18,17 +19,20 @@ $line_break\
 $character
 """
 
+# -- Configure Directory Module --
 [directory]
 format = "[\\[[$path](dark_blue bold)\\]](dark_red)"
 truncation_length = 0
 truncate_to_repo = false
 
 
+# -- Configure Git Branch Module --
 [git_branch]
 symbol = ''
 format = "[\\[[$symbol](dark_green) [$branch](dark_white bold)\\]](dark_red)"
 
 
+# -- Configure Git Status Module --
 [git_status]
 format = "[\\[[$ahead_behind](green)[$modified](dark_yellow)[$conflicted](red)[$renamed](dark_white)[$staged](dark_gray)[$untracked](gray)[$deleted](dark_red)\\]](dark_white)"
 conflicted = ''
@@ -45,51 +49,60 @@ renamed = ''
 deleted = ''
 
 
+
+# -- Configure C Language Module --
 [c]
 format = "[\\[[$symbol](#5C6BC0 bold) [$name](white) [$version](white)\\]](dark_red)"
 symbol = 'C'
 version_format = 'v${major}'
 
 
+# -- Configure Python Language Module --
 [python]
 format = "[\\[[$symbol](#FFC107 bold) [$name](white) [$virtualenv](#0277BD) [$version](white)\\]](dark_red)"
 symbol = '󰌠'
 version_format = 'v${major}'
 
 
+# -- Configure Lua Language Module --
 [lua]
 format = "[\\[[$symbol](#00007D bold) [$version](white)\\]](dark_red)"
 symbol = '󰢱'
 version_format = 'v${major}'
 
 
+# -- Configure Javascript / Node Language Module --
 [nodejs]
 format = "[\\[[$symbol](#4CAF50 bold)[$version](white)\\]](dark_red)"
 version_format = 'v${major}'
 
 
+# -- Configure "Spacer" Module --
 [fill]
 symbol=' '
 
 
+# -- Configure Background Running Tasks Module --
 [jobs]
 format = "[$symbol](s_bg bold) [$number](white)"
 symbol = '󰠔'
 number_threshold = 1
 
 
+# -- Configure Time Taken for Tasks Module --
 [cmd_duration]
 format = "[$duration](yellow)"
 min_time = 1_500
 show_milliseconds = true
 
 
+# -- Configure "Prompt Character" Module --
 [character]
 success_symbol = "[󰘧](dark_green)"
 error_symbol = "[󰘧](dark_red)"
 
 
-# DeepSpace colourscheme with proper starship keywords for colours
+# == Colour Palette ==
 [palettes.deepspace]
 bg = '#0D0E11'
 fg = '#DEE4DF'

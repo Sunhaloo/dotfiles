@@ -11,4 +11,5 @@ configuration{
 
 }
 
+// == Theme ==
 @theme "~/.config/rofi/themes/deepspace.rasi"

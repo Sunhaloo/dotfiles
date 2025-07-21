@@ -1,9 +1,9 @@
 # == define the default programs ==
 export EDITOR="nvim"
-# export TERM="kitty"
-# export TERMINAL="kitty"
-# export BROWSER="zen-browser"
-# export FILE_MANAGER="thunar"
+export TERM="kitty"
+export TERMINAL="kitty"
+export BROWSER="zen-browser"
+export FILE_MANAGER="thunar"
 
 
 # == XDG Base Directory ==
