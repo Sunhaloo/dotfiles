@@ -1,9 +1,9 @@
 * {
   /* font-family: "Liga SFMonoNerdFont", "JetBrainsMono Nerd Font Propo"; */
   font-family: "JetBrainsMono Nerd Font Propo";
-  font-size: 16px;
-  min-height: 28px;
-  min-width: 28px;
+  font-size: 14px;
+  min-height: 20px;
+  min-width: 20px;
   border: none;
   border-radius: 6px;
   transition: none;
