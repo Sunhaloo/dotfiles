@@ -1,16 +1,32 @@
 * {
   /* font-family: "Liga SFMonoNerdFont", "JetBrainsMono Nerd Font Propo"; */
   font-family: "JetBrainsMono Nerd Font Propo";
-  font-size: 14px;
-  min-height: 20px;
-  min-width: 20px;
+  font-size: 12px;
+  min-height: 10px;
+  min-width: 10px;
   border: none;
   border-radius: 6px;
   transition: none;
 }
 
 window#waybar {
-    background-color: rgba(136, 136, 136, 0.2);
+    background-color: transparent;
+}
+
+.modules-left {
+    padding: 1px;
+    background: rgba(13, 14, 17, 0.8);
+    margin: 2px 0px 0px 8px;
+}
+.modules-center {
+    padding:1px;
+    background: rgba(13, 14, 17, 0.8);
+    margin: 2px 0px 0px 0px;
+}
+.modules-right {
+    padding: 1px;
+    background: rgba(13, 14, 17, 0.8);
+    margin: 2px 8px 0px 0px;
 }
 
 #workspaces button {
@@ -33,7 +49,7 @@ window#waybar {
 
 
 #custom-logo {
-  margin: 6px 12px 6px 6px;
+  margin: 6px 6px 6px 6px;
   color: #DEE4DF;
 }
 
@@ -52,7 +68,7 @@ tooltip {
 
 
 #clock {
-    margin: 6px 12px 6px 6px;
+    margin: 6px 6px 6px 6px;
     color: #DEE4DF;
 }
 

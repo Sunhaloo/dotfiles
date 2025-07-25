@@ -1,47 +1,45 @@
 {
-    // == Define Miscellaneous Settings ==
     "layer": "top",
     "position": "top",
     "spacing": 0,
-    "height": 40,
+    // "spacing": 2,
+    "height": 32,
 
 
-    // == Define 'Left' Modules ==
     "modules-left": [
         "custom/logo",
         "hyprland/workspaces"
     ],
 
 
-    // == Define 'Centered' Modules ==
     "modules-center": [
         "clock"
     ],
 
 
-    // == Define 'Right' Modules ==
     "modules-right": [
         "tray",
         "backlight",
         "pulseaudio",
         "network",
+        // "power-profiles-daemon",
         "cpu",
         "memory",
         "battery",
         "temperature"
     ],
 
-
-    // == Custom Logo ==
     "custom/logo": {
         "format": "  ",
         "tooltip": false
     },
 
+    "hyprland/window": {
+        "format": "{class}"
+    },
 
-    // == Actual Workspaces ==
     "hyprland/workspaces": {
-       "on-click": "activate",
+        "on-click": "activate",
         "disable-scroll": false,
         "all-outputs": true,
         "warp-on-scroll": false,
@@ -52,7 +50,7 @@
 			"3": "3",
 			"4": "4",
 			"5": "5",
-			"6": "6",
+			"6": "5",
 			"7": "7",
 			"8": "8",
 			"9": "9",
@@ -63,14 +61,11 @@
         }
     },
 
-
-    // == System Tray ==
     "tray": {
         "spacing": 0
     },
 
 
-    // == Well Our Clock and Calendar ==
     "clock": {
         "format-alt": "{:%Y/%m/%d}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
@@ -89,7 +84,6 @@
     },
 
 
-    // == CPU Usage Indicator ==
     "cpu": {
         "format": " {usage}%",
         "tooltip": false,
@@ -97,31 +91,26 @@
     },
 
 
-    // == RAM Usage Indicator ==
     "memory": {
         "format": " {}%"
     },
 
 
-    // == Temperature Indicator ==
     "temperature": {
         "format": "{icon} {temperatureC}°C",
         "format-critical": "FUCKING BOILING ",
         "format-icons": "",
         "critical-threshold": 80,
-        // NOTE: need to configure the "sensor" properly for each device
         "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input"
     },
 
 
-    // == Brightness Indicator ==
     "backlight": {
         "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
 
 
-    // == Battery Indicator ==
     "battery": {
         "states": {
             "warning": 40,
@@ -161,11 +150,24 @@
     },
 
 
-    // == Network Status ==
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power Profile: {profile}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "󰤃",
+        "performance": "󰈸",
+        "balanced": "~",
+        "power-saver": ""
+      }
+    },
+
+
     "network": {
         "format-wifi": "{icon} ({signalStrength}%)",
         "format-ethernet": "",
         "format-disconnected": "󰤮",
+        "format-alt" : "󱛇",
         "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
         "tooltip-format-ethernet": " {ifname}\n⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
@@ -173,7 +175,6 @@
     },
 
 
-    // == Audio Related Indicators ==
     "pulseaudio": {
         "scroll-step": 2,
         "format": "{icon} {volume}% {format_source}",
