@@ -1,0 +1,183 @@
+{
+    // general settings
+    "window.title": "",
+    "window.restoreWindows": "preserve",
+    "workbench.startupEditor": "none",
+    "workbench.editor.revealIfOpen": true,
+    "editor.minimap.enabled": false,
+    "workbench.tips.enabled": false,
+    "explorer.confirmDelete": false,
+
+    // appearance
+    "breadcrumbs.enabled": true,
+    "workbench.editor.showTabs": "multiple",
+    "window.menuBarVisibility": "compact",
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.location": "top",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.stickyScroll.enabled": false,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "rgba(229, 85, 97, 1)",
+    "vim.highlightedyank.duration": 100,
+    "vim.highlightedyank.textColor": "rgba(85, 229, 217, 1)",
+
+    // themes
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.iconTheme": "vs-minimal",
+
+    // font
+    "editor.fontFamily": "BlexMono Nerd Font Mono",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+
+    // coding
+    "editor.lineNumbers": "relative",
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "off",
+    "editor.smoothScrolling": true,
+
+    // terminal settings
+    "terminal.integrated.fontFamily": "BlexMono Nerd Font Mono",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrgraded.fontLigatures": true,
+
+    // vim emulation settings
+    "vim.leader": " ",
+    "vim.smartcase": false,
+    "vim.useSystemClipboard": true,
+
+    // vim keymapping
+    // normal mode keymappings
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // save and close
+        {
+            "before": ["leader", "q"],
+            "commands":
+                [
+                        "workbench.action.files.save",
+                        "workbench.action.closeActiveEditor"
+                ]
+        },
+        // close without saving
+        {
+            "before": ["leader", "Q"],
+            "commands": ["workbench.action.revertAndCloseActiveEditor"]
+        },
+        // open a new empty tab
+        {
+            "before": ["t", "e"],
+            "commands": ["workbench.action.files.newUntitledFile"]
+
+        },
+        // move the next tab
+        {
+            "before": ["<tab>"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        // move the previous tab
+        {
+            "before": ["<s-tab>"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        // toggle file explorer
+        {
+            "before": ["leader", "e"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        // telescope
+        // find files
+        {
+            "before": ["leader", "f", "f"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        // "live grep" / search
+        {
+            "before": ["leader", "f", "l"],
+            "commands": ["workbench.action.findInFiles"]
+        },
+    ],
+    // insert mode keymappings
+    "vim.insertModeKeyBindings": [
+        {
+            "before":["j", "k"],
+            "after":["<Esc>"]
+        },
+        {
+            "before": ["<C-h>"],
+            "after": ["<Left>"]
+        },
+        {
+            "before": ["<C-l>"],
+            "after": ["<Right>"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["<Down>"]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": ["<Up>"]
+        }
+    ],
+
+
+    // replicate 'mini.hipatterns' with 'Better Comments'
+    "better-comments.tags": [
+        {
+            "tag": "info",
+            "color": "#BF68D9",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "note",
+            "color": "#BF68D9",
+            "strikethrough": false,
+            "underline": true,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "warning",
+            "color": "#E2B86B",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "bug",
+            "color": "#E55561",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "todo",
+            "color": "#48B0BD",
+            "strikethrough": false,
+            "underline": true,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "tip",
+            "color": "#48B0BD",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        }
+    ],
+}

@@ -107,7 +107,7 @@
     "temperature": {
         "format": "{icon} {temperatureC}°C",
         "format-critical": "FUCKING BOILING ",
-        "format-icons": ["", "", ""],
+        "format-icons": "",
         "critical-threshold": 80,
         // NOTE: need to configure the "sensor" properly for each device
         "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input"
