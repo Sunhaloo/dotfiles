@@ -67,7 +67,7 @@
 /* our actual notification displayed when something happens */
 .notification-row .notification-background .notification {
   border-radius: 12px;
-  border: 2px solid var(--white);
+  border: 1px solid var(--white);
   padding: 0;
   transition: background 0.15s ease-in-out;
   /* background: rgba(67, 73, 77, 0.7); */
