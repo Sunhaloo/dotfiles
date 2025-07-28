@@ -9,11 +9,6 @@ return {
 	-- actual configuration for blink
 
 	opts = {
-		-- general blink settings
-		menu = {
-			auto_show = true,
-		},
-
 		-- priority for sourcing auto-completion
 		sources = {
 			-- basically show auto-completion in this priority

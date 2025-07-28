@@ -165,7 +165,7 @@
 
     "network": {
         "format-wifi": "{icon} ({signalStrength}%)",
-        "format-ethernet": "",
+        "format-ethernet": "󰈀",
         "format-disconnected": "󰤮",
         "format-alt" : "󱛇",
         "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
