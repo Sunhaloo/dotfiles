@@ -45,4 +45,16 @@ return {
 			})
 		end,
 	},
+	{
+		-- choosing 'mini.surround' over 'nivm-surround'
+		"echasnovski/mini.surround",
+		version = false,
+		-- start on when in Insert Mode
+		event = "InsertEnter",
+		-- configuration for 'mini.surround'
+		config = function()
+			-- enable the "surround" plugins
+			require("mini.surround").setup({})
+		end,
+	},
 }
