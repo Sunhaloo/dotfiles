@@ -1,4 +1,3 @@
--- install and start lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -13,49 +12,54 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     os.exit(1)
   end
 end
--- add the variable `lazypath` to our `rtp` ==> runtime path
 vim.opt.rtp:prepend(lazypath)
 
--- set our global and local leader key
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- setup lazy.nvim
 require("lazy").setup({
-    spec = {
-        -- point to the 'plugins' folder ( ~/.config/nvim/lua/plugins/ )
-        { import = "plugins" },
-    },
-    -- automatically check for updates
-    checker = {
-        enabled = true,
-        frequency = 172800
-    },
-    -- check for changes but don't bother any notifications
-    change_detection = {
-        enabled = true,
-        notify = false
-    },
-    -- remove unnecessary packages
-    performance = {
-        -- at run time path
-        rtp = {
-            -- disable the following plugins
-            disabled_plugins = {
-                "gzip",
-                "matchit",
-                "matchparen",
-                "netrwPlugin",
-                "tarPlugin",
-                "tohtml",
-                "tutor",
-                "zipPlugin",
-            }
-        }
-    },
-    -- ui related settings
-    ui = {
-        border = "rounded"
-    }
-})
+  spec = {
+    -- { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = "oxocarbon" } },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = "cyberdream" } },
 
+    { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "lazyvim.plugins.extras.lang.python" },
+    { import = "lazyvim.plugins.extras.lang.clangd" },
+    { import = "lazyvim.plugins.extras.lang.git" },
+    { import = "lazyvim.plugins.extras.lang.java" },
+    { import = "lazyvim.plugins.extras.lang.sql" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.formatting.black" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+    { import = "lazyvim.plugins.extras.dap.core" },
+
+    { import = "plugins" },
+  },
+  defaults = {
+    lazy = false,
+    version = false,
+  },
+  checker = {
+    enabled = true,
+    notify = false,
+    frequency = 86400,
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
+  ui = {
+    title = "Lazy Plugin Manager",
+    title_pos = "left",
+    border = "rounded",
+  },
+})

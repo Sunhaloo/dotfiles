@@ -1,43 +1,36 @@
 return {
-	-- better auto-completion for Neovim
-	"Saghen/blink.cmp",
-	-- start on when in Insert Mode
-	event = "InsertEnter",
-	-- use a release tag to download pre-built binaries ==> default option
-	version = "*",
+  "saghen/blink.cmp",
+  opts = {
+    -- how blink will internal fuzzy finder will work
+    fuzzy = { implementation = "prefer_rust" },
 
-	-- actual configuration for blink
+    snippets = { preset = "luasnip" },
 
-	opts = {
-		-- priority for sourcing auto-completion
-		sources = {
-			-- basically show auto-completion in this priority
-			default = { "lsp", "snippets", "buffer", "path" },
-		},
+    -- keymap = {
+    --   preset = "super-tab",
+    --   ["<Tab>"] = { "select_and_accept" },
+    --
+    -- },
 
-		-- custom snippets
-		snippets = { preset = "luasnip" },
+    keymap = {
+      preset = "super-tab",
+      ["<Tab>"] = { "select_and_accept", "fallback" },
+      ["<S-Tab>"] = { "select_prev", "fallback" }, -- optional, for Shift+Tab
+    },
 
-		-- keymap configuration
-		keymap = {
-			-- make it similar to VS C*de
-			preset = "super-tab",
-		},
+    completion = {
+      ghost_text = {
+        enabled = false,
+      },
+      menu = {
+        border = "rounded",
+      },
 
-		-- how blink will internal fuzzy finder will work
-		fuzzy = { implementation = "prefer_rust" },
-
-		-- some appearance changes
-		completion = {
-			menu = {
-				border = "rounded",
-			},
-
-			documentation = {
-				window = {
-					border = "rounded",
-				},
-			},
-		},
-	},
+      documentation = {
+        window = {
+          border = "rounded",
+        },
+      },
+    },
+  },
 }

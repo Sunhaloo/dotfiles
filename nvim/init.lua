@@ -1,4 +1,4 @@
-require("config.keymaps")
-require("config.options")
 require("config.lazy")
-require("config.autocmd")
+
+-- vim.cmd.colorscheme("lackluster-hack")
+-- vim.cmd.colorscheme("rusty")
