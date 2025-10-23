@@ -1,74 +1,101 @@
-#| hold these keys together to exit kanata
-<LCtrl> + <Space> + <Esc>
-|#
+;; to force quit kanata, press the following key combination: <LCtrl> + <Space> + <Esc>
 
+;; kanata configurations
 (defcfg
+  ;; allows us to use the key that are not remapped with default behaviour
   process-unmapped-keys yes
+  ;; allows for chording / combos
+  concurrent-tap-hold yes
 )
 
 
-;; define the order of keys that default layer will operate on
-;; basically we are going to place our keys that we want to remap here
-(defsrc
-  caps
-  rsft
-  ralt
-  h
-  j
-  k
-  l
-)
-
-
-;; define the variable for time
+;; define variables for tap times and hold times
 (defvar
-    tap-time-fast 20
-    tap-time-slow 60
-    hold-time-fast 65
-    hold-time-slow 100
+  default-tap-time 200
+  default-hold-time 200
+  tap-time 125
+  hold-time 125
+  fast-tap-time 80
+  fast-hold-time 80
+  chord-timeout 50
 )
 
+;; physical keyboard layout for Dell Latitude E7450 keyboard
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt ins  del
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rctl pgup up   pgdn
+                                                   left down rght
+)
 
-;; consider this function
+;; chord definitions
+(defchords chords $chord-timeout
+  (j) j
+  (k) k
+  (j k) esc
+)
+
+;; definitions of keymappings for individual key "variables"
 (defalias
-  ;; this will define caps lock key for a tab-hold behaviour
-  ;; "tapping" within 80 will trigger <Esc>
-  ;; "holding" within 65 will trigger <LCtrl>
-  ;; cap_esc_ctrl (tap-hold 80 65 esc lctl)
+  ;; define the navigation - number layer
+  nav_layer (layer-while-held navigation_numbers)
+  ;; define the symbols layer
+  sym_layer (layer-while-held symbols)
+  ;; define the mouse layer
+  mouse_layer (layer-while-held mouse)
 
-  cap_esc_ctrl (tap-hold $tap-time-slow $hold-time-fast esc lctl)
-  ;; "tapping" within 20 will trigger <Esc>
-  ;; "holding" within 100 will trigger <RShift>
-
-  rshift_bspc_shift (tap-hold $tap-time-fast $hold-time-slow bspc rsft)
-
-  ;; make the layer variable
-  right_alt (layer-while-held vim_arrows)
-  ;; actually make the right alt key
-  r_alt_hold_layer (tap-hold $tap-time-slow $hold-time-fast ralt @right_alt)
+  ;; define the left hand side outer right thumb key --> 'Enter' and 'Symbols Layer'
+  LAlt_Ent_Sym_Hold (tap-hold $tap-time $hold-time ret @sym_layer)
+  ;; define the right hand side outer left thumb key --> 'Navigation Layer'
+  RAlt_Nav @nav_layer
+  ;; define the right hand side middle thumb key --> 'Mouse Layer'
+  RCtrl_Mouse @mouse_layer
+  ;; change the 'Caps Lock' --> Left 'Ctrl'
+  Caps_Lock_LCtrl lctl
 )
 
-
-;; consider this "function" to be like our main function in Python
-;; in this case the "function" is called `base` and we are "running" `lctl`
+;; my base layer
 (deflayer base
-  ;; basically run the alias "function"
-  @cap_esc_ctrl
-  @rshift_bspc_shift
-  @r_alt_hold_layer
-  _ ;; h
-  _ ;; j
-  _ ;; k
-  _ ;; l
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  tab  q    w    e    r    t    y    u    i    o    p    bspc _    _
+  @Caps_Lock_LCtrl a    s    d    f    g    h    (chord chords j)    (chord chords k)    l    ;    '    _
+  lsft z    x    c    v    b    n    m    ,    .    /    lalt
+  _    _    @LAlt_Ent_Sym_Hold           spc            @RAlt_Nav @RCtrl_Mouse _    _    _
+                                                              _    _    _
 )
 
+;; my navigation-numbers layer
+(deflayer navigation_numbers
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    1    2    3    4    5    6    7    8    9    0    _    _    _
+  _    a    s    ins  home pgup left down up   rght XX   XX   _
+  _    f4   f2   del  end  pgdn XX   XX   _    _    prnt XX
+  _    _    _              _              _    _    _    _    _
+                                               _    _    _
+)
 
-(deflayer vim_arrows
-  _       ;; caps (position 1)
-  _       ;; rsft (position 2)
-  _       ;; ralt (position 3)
-  left    ;; h (position 8)
-  down    ;; j (position 9)
-  up      ;; k (position 10)
-  right   ;; l (position 11)
+;; my symbols layer
+(deflayer symbols
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  -    XX   _    _    _
+  _    S-\  \    S--  S-9  S-[  S-]  S-0  =    grv  S-;  S-'  _
+  _    XX   XX   XX   [    S-,  S-.  ]    S-=  S-grv \   XX
+  _    _    _              _              _    _    _    _    _
+                                               _    _    _
+)
+
+(deflayer mouse
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  XX   XX   (mwheel-down 50 120) (movemouse-up 1 1) (mwheel-up 50 120) XX XX f12 f11 f10 f9 _ _ _
+  XX   (mwheel-left 50 120) (movemouse-left 1 1) (movemouse-down 1 1) (movemouse-right 1 1) (mwheel-right 50 120) XX f8 f7 f6 f5 XX _
+  XX   XX   XX   XX   XX   XX   XX   f4   f3   f2   f1   XX
+  _    _    mmid mlft           mrgt           ent  _    _    _
+                                                    _    _    _
 )

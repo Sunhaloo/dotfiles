@@ -1,31 +1,31 @@
-;; to force quit kanata, press the following key combination: <LCtrl> + <Space> + <Esc>
+#| hold these keys together to exit kanata
+<LCtrl> + <Space> + <Esc>
+|#
 
-;; kanata configurations
 (defcfg
-  ;; allows us to use the key that are not remapped with default behaviour
   process-unmapped-keys yes
 )
 
 
-;; define variables for tap times and hold times
-(defvar
-  default-tap-time 200
-  default-hold-time 200
-  tap-time 125
-  hold-time 125
-  fast-tap-time 80
-  fast-hold-time 80
+;; define the order of keys that default layer will operate on
+;; basically we are going to place our keys that we want to remap here
+(defsrc
+  caps
+  rsft
+  ralt
+  h
+  j
+  k
+  l
 )
 
-;; physical keyboard layout for Dell Latitude E7450 keyboard
-(defsrc
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt ins  del
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl fn   lmet lalt           spc            ralt rctl pgup up   pgdn
-                                                        left down rght
+
+;; define the variable for time
+(defvar
+    tap-time-fast 20
+    tap-time-slow 60
+    hold-time-fast 65
+    hold-time-slow 100
 )
 
 
