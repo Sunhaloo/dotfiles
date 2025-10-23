@@ -64,7 +64,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    bspc _    _
   @Caps_Lock_LCtrl a    s    d    f    g    h    (chord chords j)    (chord chords k)    l    ;    '    _
   lsft z    x    c    v    b    n    m    ,    .    /    lalt
-  _    _    @LAlt_Ent_Sym_Hold           spc            @RAlt_Nav @RCtrl_Mouse _    _    _
+  lalt    _    @LAlt_Ent_Sym_Hold           spc            @RAlt_Nav @RCtrl_Mouse _    _    _
                                                               _    _    _
 )
 
