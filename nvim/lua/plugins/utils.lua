@@ -14,7 +14,7 @@ return {
       -- auto-start 'auto-save.nvim' when package manager load plugins
       enabled = true,
       -- how long to wait to save ( based on the `events` )
-      debounce_delay = 3000,
+      debounce_delay = 2000,
       noautocmd = true,
     },
   },

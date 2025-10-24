@@ -8,7 +8,8 @@ return {
       },
     },
 
-    animate = { enabled = false },
+    animate = { enabled = true },
+    scroll = { enabled = true },
     dashboard = { enabled = false },
 
     image = { enabled = true },

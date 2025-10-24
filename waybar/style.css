@@ -1,6 +1,5 @@
 * {
-  /* font-family: "Liga SFMonoNerdFont", "JetBrainsMono Nerd Font Propo"; */
-  font-family: "JetBrainsMono Nerd Font Propo";
+  font-family: "BlexMono Nerd Font Propo";
   font-size: 12px;
   min-height: 10px;
   min-width: 10px;
@@ -10,68 +9,64 @@
 }
 
 window#waybar {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .modules-left {
-    padding: 1px;
-    background: rgba(13, 14, 17, 0.8);
-    margin: 2px 0px 0px 8px;
+  padding: 1px;
+  background: rgba(13, 14, 17, 0.8);
+  margin: 2px 0px 0px 8px;
 }
 .modules-center {
-    padding:1px;
-    background: rgba(13, 14, 17, 0.8);
-    margin: 2px 0px 0px 0px;
+  padding: 1px;
+  background: rgba(13, 14, 17, 0.8);
+  margin: 2px 0px 0px 0px;
 }
 .modules-right {
-    padding: 1px;
-    background: rgba(13, 14, 17, 0.8);
-    margin: 2px 8px 0px 0px;
+  padding: 1px;
+  background: rgba(13, 14, 17, 0.8);
+  margin: 2px 8px 0px 0px;
 }
 
 #workspaces button {
   padding: 2px;
   margin: 6px 6px 6px 0px;
-  color: #DEE4DF;
+  color: #dee4df;
 }
 
 #workspaces button:hover {
-  color: #CCCCCC;
+  color: #cccccc;
   background-color: rgba(136, 136, 136, 0.5);
   font-weight: 700;
 }
 
 #workspaces button.active {
-  color: #CCCCCC;
+  color: #cccccc;
   background-color: rgba(136, 136, 136, 0.5);
   font-weight: 700;
 }
 
-
 #custom-logo {
   margin: 6px 6px 6px 6px;
-  color: #DEE4DF;
+  color: #dee4df;
 }
-
 
 #custom-logo:hover {
   margin: 6px 12px 6px 6px;
-  color: #1E88E5;
+  color: #1e88e5;
 }
 
 tooltip {
-    background: rgba(0, 0, 0, 0.9);
-    border: 2px #0D0E11;
-    color: #DEE4DF;
-    padding: 6px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px #0d0e11;
+  color: #dee4df;
+  padding: 6px;
 }
-
 
 #clock {
-    margin: 6px 6px 6px 6px;
-    color: #DEE4DF;
+  margin: 6px 6px 6px 6px;
+  color: #dee4df;
 }
-
 
 #tray,
 #pulseaudio,
@@ -81,35 +76,30 @@ tooltip {
 #memory,
 #backlight,
 #battery {
-    margin: 6px 0px 6px 10px;
-    color: #DEE4DF;
+  margin: 6px 0px 6px 10px;
+  color: #dee4df;
 }
-
 
 #temperature {
-    margin: 6px 12px 6px 12px;
-    color: #DEE4DF;
+  margin: 6px 12px 6px 12px;
+  color: #dee4df;
 }
-
 
 /* WARNING: still need to finalise the colours as DeepSpace does not have 'Orange' */
 #battery.warning {
-    color: #21798A;
+  color: #21798a;
 }
-
 
 #battery.critical {
-    color: #E8AA32;
+  color: #e8aa32;
 }
-
 
 #battery.urgent {
-    font-weight: 700;
-    color: #E62D2D;
+  font-weight: 700;
+  color: #e62d2d;
 }
 
-
 #temperature.critical {
-    font-weight: 700;
-    color: #E62D2D;
+  font-weight: 700;
+  color: #e62d2d;
 }

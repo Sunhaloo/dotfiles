@@ -47,12 +47,12 @@
   ;; define the mouse layer
   mouse_layer (layer-while-held mouse)
 
-  ;; define the left hand side outer right thumb key --> 'Enter' and 'Symbols Layer'
-  LAlt_Ent_Sym_Hold (tap-hold $tap-time $hold-time ret @sym_layer)
+  ;; define the left hand side outer right thumb key --> 'Space' and 'Symbols Layer'
+  Spc_Sym_Hold (tap-hold $tap-time $hold-time spc @sym_layer)
   ;; define the right hand side outer left thumb key --> 'Navigation Layer'
   RAlt_Nav @nav_layer
-  ;; define the right hand side middle thumb key --> 'Mouse Layer'
-  RCtrl_Mouse @mouse_layer
+  ;; define the mouse layer in-place of original control key
+  LCtrl_Mouse @mouse_layer
   ;; change the 'Caps Lock' --> Left 'Ctrl'
   Caps_Lock_LCtrl lctl
 )
@@ -64,7 +64,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    bspc _    _
   @Caps_Lock_LCtrl a    s    d    f    g    h    (chord chords j)    (chord chords k)    l    ;    '    _
   lsft z    x    c    v    b    n    m    ,    .    /    lalt
-  lalt    _    @LAlt_Ent_Sym_Hold           spc            @RAlt_Nav @RCtrl_Mouse _    _    _
+  @LCtrl_Mouse    lalt    lmet           @Spc_Sym_Hold            @RAlt_Nav _   _    _    _
                                                               _    _    _
 )
 

@@ -21,7 +21,7 @@
     DarkWhite: #AAAAAA;
     White: #CCCCCC;
 
-    font: "JetBrainsMono Nerd Font 12";
+    font: "BlexMono Nerd Font Propo Regular 12";
 
     margin: 0;
     padding: 0;
