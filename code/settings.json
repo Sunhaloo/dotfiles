@@ -1,183 +1,143 @@
 {
-    // general settings
-    "window.title": "",
-    "window.restoreWindows": "preserve",
-    "workbench.startupEditor": "none",
-    "workbench.editor.revealIfOpen": true,
-    "editor.minimap.enabled": false,
-    "workbench.tips.enabled": false,
-    "explorer.confirmDelete": false,
+  // General VS Code Options
+  "editor.experimental.preferTreeSitter.css": true,
+  "editor.experimental.preferTreeSitter.typescript": false,
+  "editor.mouseWheelZoom": true,
+  "telemetry.editStats.enabled": false,
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "off",
+  "update.showReleaseNotes": false,
 
-    // appearance
-    "breadcrumbs.enabled": true,
-    "workbench.editor.showTabs": "multiple",
-    "window.menuBarVisibility": "compact",
-    "workbench.statusBar.visible": false,
-    "workbench.activityBar.location": "top",
-    "editor.scrollbar.vertical": "hidden",
-    "editor.scrollbar.horizontal": "hidden",
-    "editor.stickyScroll.enabled": false,
-    "vim.highlightedyank.enable": true,
-    "vim.highlightedyank.color": "rgba(229, 85, 97, 1)",
-    "vim.highlightedyank.duration": 100,
-    "vim.highlightedyank.textColor": "rgba(85, 229, 217, 1)",
+  // Autosave
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 2000,
 
-    // themes
-    "workbench.colorTheme": "Default Dark Modern",
-    "workbench.iconTheme": "vs-minimal",
+  // Coding and Writing Options
+  "editor.autoIndentOnPaste": true,
+  "editor.detectIndentation": false,
+  "editor.folding": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
 
-    // font
-    "editor.fontFamily": "BlexMono Nerd Font Mono",
-    "editor.fontSize": 14,
-    "editor.fontLigatures": true,
+  // Formatters
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
 
-    // coding
-    "editor.lineNumbers": "relative",
-    "editor.cursorStyle": "line",
-    "editor.cursorBlinking": "smooth",
-    "editor.cursorSmoothCaretAnimation": "off",
-    "editor.smoothScrolling": true,
+  // Programming Language Related
+  // Python Programming Language Specific Settings
+  "[python]": {
+    // Python Formatter
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
 
-    // terminal settings
-    "terminal.integrated.fontFamily": "BlexMono Nerd Font Mono",
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrgraded.fontLigatures": true,
+  // Appearance
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.rulers": [80],
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 12,
+  "editor.smoothScrolling": true,
+  "editor.stickyScroll.enabled": false,
 
-    // vim emulation settings
-    "vim.leader": " ",
-    "vim.smartcase": false,
-    "vim.useSystemClipboard": true,
+  "explorer.confirmDelete": false,
 
-    // vim keymapping
-    // normal mode keymappings
-    "vim.normalModeKeyBindingsNonRecursive": [
-        // save and close
-        {
-            "before": ["leader", "q"],
-            "commands":
-                [
-                        "workbench.action.files.save",
-                        "workbench.action.closeActiveEditor"
-                ]
-        },
-        // close without saving
-        {
-            "before": ["leader", "Q"],
-            "commands": ["workbench.action.revertAndCloseActiveEditor"]
-        },
-        // open a new empty tab
-        {
-            "before": ["t", "e"],
-            "commands": ["workbench.action.files.newUntitledFile"]
+  "vim.highlightedyank.color": "rgba(229, 85, 97, 1)",
+  "vim.highlightedyank.duration": 100,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.textColor": "rgba(85, 229, 217, 1)",
 
-        },
-        // move the next tab
-        {
-            "before": ["<tab>"],
-            "commands": ["workbench.action.nextEditor"]
-        },
-        // move the previous tab
-        {
-            "before": ["<s-tab>"],
-            "commands": ["workbench.action.previousEditor"]
-        },
-        // toggle file explorer
-        {
-            "before": ["leader", "e"],
-            "commands": ["workbench.action.toggleSidebarVisibility"]
-        },
-        // telescope
-        // find files
-        {
-            "before": ["leader", "f", "f"],
-            "commands": ["workbench.action.quickOpen"]
-        },
-        // "live grep" / search
-        {
-            "before": ["leader", "f", "l"],
-            "commands": ["workbench.action.findInFiles"]
-        },
-    ],
-    // insert mode keymappings
-    "vim.insertModeKeyBindings": [
-        {
-            "before":["j", "k"],
-            "after":["<Esc>"]
-        },
-        {
-            "before": ["<C-h>"],
-            "after": ["<Left>"]
-        },
-        {
-            "before": ["<C-l>"],
-            "after": ["<Right>"]
-        },
-        {
-            "before": ["<C-j>"],
-            "after": ["<Down>"]
-        },
-        {
-            "before": ["<C-k>"],
-            "after": ["<Up>"]
-        }
-    ],
+  "window.restoreWindows": "preserve",
+  "window.title": "",
 
+  "workbench.colorTheme": "Neovim Theme",
+  "workbench.editor.showTabs": "multiple",
+  "workbench.iconTheme": "hypernym-icons",
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
 
-    // replicate 'mini.hipatterns' with 'Better Comments'
-    "better-comments.tags": [
-        {
-            "tag": "info",
-            "color": "#BF68D9",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-        {
-            "tag": "note",
-            "color": "#BF68D9",
-            "strikethrough": false,
-            "underline": true,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-        {
-            "tag": "warning",
-            "color": "#E2B86B",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-        {
-            "tag": "bug",
-            "color": "#E55561",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-        {
-            "tag": "todo",
-            "color": "#48B0BD",
-            "strikethrough": false,
-            "underline": true,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-        {
-            "tag": "tip",
-            "color": "#48B0BD",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        }
-    ],
+  // Terminal Settings
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cursorBlinking": false,
+
+  // Vim Emulation Settings
+  "vim.leader": " ",
+  "vim.smartcase": false,
+  "vim.useSystemClipboard": true,
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // save and close
+    {
+      "before": ["leader", "q"],
+      "commands": [
+        "workbench.action.files.save",
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+    // close without saving
+    {
+      "before": ["leader", "Q"],
+      "commands": ["workbench.action.revertAndCloseActiveEditor"]
+    },
+    // open a new empty tab
+    {
+      "before": ["t", "e"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    },
+    // move the next tab
+    {
+      "before": ["<tab>"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    // move the previous tab
+    {
+      "before": ["<s-tab>"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    // toggle file explorer
+    {
+      "before": ["leader", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    // telescope
+    // find files
+    {
+      "before": ["leader", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    // "live grep" / search
+    {
+      "before": ["leader", "f", "l"],
+      "commands": ["workbench.action.findInFiles"]
+    }
+  ],
+
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["<Left>"]
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<Right>"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<Down>"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<Up>"]
+    }
+  ]
 }
