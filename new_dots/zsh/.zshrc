@@ -49,17 +49,9 @@ elif [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting
 fi
 
 
-
 # == Other Files ==
 # source your aliases
 # source $XDG_CONFIG_HOME/oh-my-zsh/aliases.zsh
-
-# System - eza
-alias ls='eza --no-user --no-time --no-permissions --icons=always'
-alias ll='eza -la --no-user --no-time --no-permissions --icons=always'
-alias lt='eza -T --icons=always'
-
-alias nv="nvim"
 
 
 # == Source Other Programs ==
@@ -69,6 +61,20 @@ source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 # set up starship
 eval "$(starship init zsh)"
+
+
+# System - eza
+alias ls='eza --no-user --no-time --no-permissions --icons=always'
+alias ll='eza -la --no-user --no-time --no-permissions --icons=always'
+alias lt='eza -T --icons=always'
+
+alias nv="nvim"
+
+# keybindings
+
+# use control + left / right arrow key to move cursor
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
 
 # opencode
 export PATH=/home/azmaan/.opencode/bin:$PATH
