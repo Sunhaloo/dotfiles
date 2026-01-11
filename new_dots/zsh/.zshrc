@@ -76,6 +76,10 @@ alias nv="nvim"
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
 
+# use home / end keys to move cursor to beginning / end of line
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
 # opencode
 export PATH=/home/azmaan/.opencode/bin:$PATH
 
