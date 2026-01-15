@@ -22,7 +22,7 @@ tmux_windows_panes_populate() {
 
 # custom startup tmux function ( with windows and panes population )
 tmux_startup_procedure() {
-  local session_name="0"
+  local session_name="tmux"
   local directory="."
 
   if [[ "$#" -eq 0 ]]; then
@@ -32,6 +32,7 @@ tmux_startup_procedure() {
   elif [[ $# -eq 1 ]]; then
     if [[ -d "$1" ]]; then
       directory="$1"
+      session_name="tmux"
     else
       session_name="$1"
     fi
