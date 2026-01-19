@@ -33,7 +33,7 @@ tmux_populate() {
 
   # send specific command to specific windows and panes
   tmux send-keys -t "${session_name}:1.1" "nvim" C-m
-  tmux send-keys -t "${session_name}:3.1" "qwen" C-m
+  tmux send-keys -t "${session_name}:3.1" "ls" C-m
 }
 
 # custom startup tmux function
