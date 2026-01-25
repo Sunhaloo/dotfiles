@@ -22,9 +22,9 @@ tmux_populate() {
   local directory="$2"
 
   # create required windows inside the correct session
-  tmux new-window -d -t "$session_name" -c "$directory"
-  tmux new-window -d -t "$session_name" -c "$directory"
-  tmux new-window -d -t "$session_name" -c "$directory"
+  tmux new-window -d -t "${session_name}:2" -c "$directory"
+  tmux new-window -d -t "${session_name}:3" -c "$directory"
+  tmux new-window -d -t "${session_name}:4" -c "$directory"
 
   # setup panes for last window ==> window 4
   tmux split-window -h -t "${session_name}:4.1" -c "$directory"
