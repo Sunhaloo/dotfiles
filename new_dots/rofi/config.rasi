@@ -1,0 +1,15 @@
+configuration {
+    // rofi allowed modes
+    modi: "run,drun";
+    
+    // input bar icons
+    display-run: "  ";
+    display-drun: "  ";
+
+    // application icons
+    show-icons: true;
+    // icon theme to be added later
+    // icon-theme: "";
+}
+
+@import "~/.config/rofi/themes/testing.rasi"

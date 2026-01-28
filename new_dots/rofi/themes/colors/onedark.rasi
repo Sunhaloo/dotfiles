@@ -1,0 +1,38 @@
+* {
+    background:              #282C34FF;
+    foreground:              #ABB2BFFF;
+    selection-background:    #ABB2BFFF;
+    selection-foreground:    #282C34FF;
+    cursor:                  #ABB2BFFF;
+    cursor-text-color:       #282C34FF;
+    url-color:               #ABB2BFFF;
+
+    active-tab-foreground:   #3F4451FF;
+    active-tab-background:   #D7DAE0FF;
+    inactive-tab-foreground: #ABB2BFFF;
+    inactive-tab-background: #282C34FF;
+
+    color0:                  #3F4451FF;
+    color8:                  #4F5666FF;
+
+    color1:                  #E06C75FF;
+    color9:                  #BE5046FF;
+
+    color2:                  #98C379FF;
+    color10:                 #A5E075FF;
+
+    color3:                  #D19A66FF;
+    color11:                 #E5C07BFF;
+
+    color4:                  #61AFEFFF;
+    color12:                 #4DC4FFFF;
+
+    color5:                  #C678DDFF;
+    color13:                 #DE73FFFF;
+
+    color6:                  #56B6C2FF;
+    color14:                 #4CD1E0FF;
+
+    color7:                  #D7DAE0FF;
+    color15:                 #E6E6E6FF;
+}

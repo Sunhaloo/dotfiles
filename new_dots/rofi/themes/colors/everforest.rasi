@@ -1,0 +1,33 @@
+* {
+    background:              #272E33FF;
+    foreground:              #D3C6AAFF;
+    selection-background:    #464E53FF;
+    selection-foreground:    #9DA9A0FF;
+    cursor:                  #D3C6AAFF;
+    cursor-text-color:       #2E383CFF;
+    url-color:               #7FBBB3FF;
+
+    color0:                  #343F44FF;
+    color8:                  #868D80FF;
+
+    color1:                  #E67E80FF;
+    color9:                  #E67E80FF;
+
+    color2:                  #A7C080FF;
+    color10:                 #A7C080FF;
+
+    color3:                  #DBBC7FFF;
+    color11:                 #DBBC7FFF;
+
+    color4:                  #7FBBB3FF;
+    color12:                 #7FBBB3FF;
+
+    color5:                  #D699B6FF;
+    color13:                 #D699B6FF;
+
+    color6:                  #83C092FF;
+    color14:                 #83C092FF;
+
+    color7:                  #859289FF;
+    color15:                 #9DA9A0FF;
+}

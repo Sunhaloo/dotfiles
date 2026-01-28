@@ -1,0 +1,32 @@
+* {
+    background:              #0D0E11FF;
+    foreground:              #DEE4DFFF;
+    selection-background:    #919191FF;
+    selection-foreground:    #000000FF;
+    cursor:                  #797F87FF;
+    cursor-text-color:       #000000FF;
+
+    color0:                  #43494DFF;
+    color8:                  #5C656AFF;
+
+    color1:                  #E62D2DFF;
+    color9:                  #FD2121FF;
+
+    color2:                  #7C9F34FF;
+    color10:                 #80B918FF;
+
+    color3:                  #E8AA32FF;
+    color11:                 #FFCE1FFF;
+
+    color4:                  #3D8CC4FF;
+    color12:                 #2B87FFFF;
+
+    color5:                  #A765CCFF;
+    color13:                 #A14FE9FF;
+
+    color6:                  #21798AFF;
+    color14:                 #2DA2BAFF;
+
+    color7:                  #AAAAAAFF;
+    color15:                 #CCCCCCFF;
+}

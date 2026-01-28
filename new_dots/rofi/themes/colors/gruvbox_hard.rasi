@@ -1,0 +1,38 @@
+* {
+    background:              #1D2021FF;
+    foreground:              #EBDBB2FF;
+    selection-background:    #D65D0EFF;
+    selection-foreground:    #EBDBB2FF;
+    cursor:                  #BDAE93FF;
+    cursor-text-color:       #665C54FF;
+    url-color:               #458588FF;
+
+    active-tab-foreground:   #EEEEEEFF;
+    active-tab-background:   #D65D0EFF;
+    inactive-tab-foreground: #EBDBB2FF;
+    inactive-tab-background: #171A1AFF;
+
+    color0:                  #3C3836FF;
+    color8:                  #928374FF;
+
+    color1:                  #CC241DFF;
+    color9:                  #FB4934FF;
+
+    color2:                  #98971AFF;
+    color10:                 #B8BB26FF;
+
+    color3:                  #D79921FF;
+    color11:                 #FABD2FFF;
+
+    color4:                  #458588FF;
+    color12:                 #83A598FF;
+
+    color5:                  #B16286FF;
+    color13:                 #D3869BFF;
+
+    color6:                  #689D6AFF;
+    color14:                 #8EC07CFF;
+
+    color7:                  #A89984FF;
+    color15:                 #FBF1C7FF;
+}
