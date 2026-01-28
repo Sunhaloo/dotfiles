@@ -8,8 +8,9 @@ WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o
 
 # set the wallpaper using 'swww'
 if [ -n "$WALLPAPER" ]; then
-    swww img "$WALLPAPER" \
-        --transition-type fade \
-        --transition-fps 60 \
-        --transition-duration 2
+  swww img "$WALLPAPER" \
+    --transition-type fade \
+    --transition-fps 60 \
+    --transition-duration 2
 fi
+
