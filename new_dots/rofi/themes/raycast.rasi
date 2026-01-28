@@ -1,314 +1,310 @@
-// Raycast-style theme for Rofi
-// Custom theme based on Raycast launcher design
-// Uses variables from imported color file for theme flexibility
-
-// Import colors file
-@import "~/.config/rofi/themes/colors.rasi"
-
-// Global properties using variables from imported color file
 * {
-    border-colour:                         var(selection-background);
-    handle-colour:                         var(cursor);
-    background-colour:                     var(background);
-    foreground-colour:                     var(foreground);
-    alternate-background:                  var(color0);
-    normal-background:                     var(background);
-    normal-foreground:                     var(foreground);
-    urgent-background:                     var(color1);
-    urgent-foreground:                     var(background);
-    active-background:                     var(color2);
-    active-foreground:                     var(background);
-    selected-normal-background:            var(selection-background);
-    selected-normal-foreground:            var(selection-foreground);
-    selected-urgent-background:            var(color5);
-    selected-urgent-foreground:            var(background);
-    selected-active-background:            var(color3);
-    selected-active-foreground:            var(background);
-    alternate-normal-background:           var(background);
-    alternate-normal-foreground:           var(foreground);
-    alternate-urgent-background:           var(color1);
-    alternate-urgent-foreground:           var(background);
-    alternate-active-background:           var(color2);
-    alternate-active-foreground:           var(background);
+    BG: #0D0E11;
+    FG: #DEE4DF;
+    Black: #000000;
+    Cursor: #797F87;
+    DarkGray: #43494D;
+    Gray: #5C656A;
+    Gray1: #383838;
+    DarkRed: #E62D2D;
+    Red: #FD2121;
+    DarkGreen: #7C9F34;
+    Green: #80B918;
+    DarkYellow: #E8AA32;
+    Yellow: #FFCE1F;
+    DarkBlue: #3D8CC4;
+    Blue: #2B87FF;
+    DarkPurple: #A765CC;
+    Purple: #A14FE9;
+    DarkCyan: #21798A;
+    Cyan: #2DA2BA;
+    DarkWhite: #AAAAAA;
+    White: #CCCCCC;
 
-    font:                                  "BlexMono Nerd Font Propo Regular 12";
+    font: "BlexMono Nerd Font Propo Regular 12";
 
-    margin:                                0;
-    padding:                               0;
-    spacing:                               0;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
 
-    background-color:                      transparent;
-    text-color:                            @foreground-colour;
+    background-color: transparent;
+    text-color: @FG;
 
-    highlight:                             bold;
+    highlight: bold;
+
+    background: transparent;
+    foreground: @FG;
+    normal-background: transparent;
+    normal-foreground: @FG;
+    alternate-background: transparent;
+    alternate-foreground: @FG;
+    urgent-background: transparent;
+    urgent-foreground: @FG;
+    active-background: transparent;
+    active-foreground: @FG;
+    selected-normal-background: @DarkGray;
+    selected-normal-foreground: @FG;
+    selected-urgent-background: @Red;
+    selected-urgent-foreground: @BG;
+    selected-active-background: @Blue;
+    selected-active-foreground: @BG;
+    alternate-normal-background: transparent;
+    alternate-normal-foreground: @FG;
+    alternate-urgent-background: transparent;
+    alternate-urgent-foreground: @FG;
+    alternate-active-background: transparent;
+    alternate-active-foreground: @FG;
 }
 
-// Main window configuration
 window {
-    location:                              center;
-    width:                                 800px;
-    transparency:                          "real";
-    background-color:                      rgba (13, 14, 17, 80%);
-    border:                                1px;
-    border-radius:                         12px;
-    border-color:                          @border-colour;
+    location: center;
+    width: 800px;
+    transparency: "real";
+    background-color: rgba(13, 14, 17, 60%);
+    border: 1px;
+    border-radius: 12px;
+    border-color: @DarkGray;
 }
 
-// Main container layout
 mainbox {
-    padding:                               10px 10px 10px 10px;
-    background-color:                      transparent;
-    children:                              [inputbar, listview, footer];
+    padding: 10px 10px 10px 10px;
+    children: [inputbar, listview, footer];
 }
 
-// Input bar configuration
 inputbar {
-    padding:                               20px 2px 20px 2px;
-    background-color:                      transparent;
-    children:                              [prompt, entry];
+    padding: 20px 2px 20px 2px;
+    children: [prompt, entry];
 }
 
-// Prompt styling
 prompt {
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.8;
+    text-color: @DarkWhite;
+    vertical-align: 0.8;
 }
 
-// Entry field styling
 entry {
-    text-color:                            @foreground-colour;
-    cursor-width:                          1px;
-    cursor-color:                          @cursor;
-    placeholder-color:                     @alternate-background;
-    vertical-align:                        0.5;
+    text-color: #C8C6C6;
+    cursor-width: 1px;
+    cursor-color: #5D5F5D;
+    placeholder-color: @DarkWhite;
+    vertical-align: 0.5;
 }
 
-// List view configuration
 listview {
-    border:                                1px;
-    border-color:                          @border-colour;
-    columns:                               1;
-    lines:                                 9;
-    dynamic:                               true;
-    cycle:                                 true;
-    background-color:                      rgba (92, 101, 106, 5%);
-    border-radius:                         12px;
-    padding:                               6px;
+    border: 1px;
+    border-color: rgba(67, 73, 77, 25%);
+    columns: 1;
+    lines: 9;
+    dynamic: true;
+    cycle: true;
+    background-color: rgba(92, 101, 106, 5%);
+    border-radius: 12px;
+    padding: 6px;
 }
 
-// Element styling (individual list items)
 element {
-    padding:                               6px 0px 6px 8px;
-    border-radius:                         5px;
-    border-color:                          @border-colour;
-    background-color:                      @background-colour;
+    padding: 6px 0px 6px 8px;
+    border-radius: 5px;
+    border-color: #FFFFFF;
 }
 
 element selected {
-    border-radius:                         9px;
-    background-color:                      @background-colour;
-    text-color:                            @selected-normal-foreground;
+    border-radius: 9px;
+    background-color: #2D2F2E;
+    text-color: white;
 }
 
-// Element text styling
 element-text {
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
+    text-color: @White;
+    vertical-align: 0.5;
 }
 
 element-text selected {
-    text-color:                            @selected-normal-foreground;
+    text-color: @FG;
 }
 
-// Element icon styling
 element-icon {
-    size:                                  24px;
-    background-color:                      transparent;
+    size: 24px;
+    background-color: transparent;
 }
 
-// Footer section (for key bindings info)
 footer {
-    children:                              [textbox-1, spacer, keys-info];
-    expand:                                false;
-    orientation:                           horizontal;
-    background-color:                      rgba (92, 101, 106, 5%);
-    border-color:                          rgba (67, 73, 77, 25%);
-    border:                                1px;
-    border-radius:                         12px;
-    padding:                               4px 6px 4px 6px;
-    margin:                                10px 0px 0px 0px;
+    children: [textbox-1, spacer, keys-info];
+    expand: false;
+    orientation: horizontal;
+    background-color: rgba(92, 101, 106, 5%);
+    border-color: rgba(67, 73, 77, 25%);
+    border: 1px;
+    border-radius: 12px;
+    padding: 4px 6px 4px 6px;
+    margin: 10px 0px 0px 0px;
 }
 
-// Spacer element
 spacer {
-    str:                                   "";
-    expand:                                true;
-    background-color:                      transparent;
+    str: "";
+    expand: true;
+    background-color: transparent;
 }
 
-// Textbox for app icon
 textbox-1 {
-    expand:                                false;
-    str:                                   "󰣇 ";
-    background-color:                      transparent;
-    // NOTE: if you want to use actual blue color for arch linux logo
-    // text-color: rgba (30, 136, 229, 60 %);
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
-    margin:                                10px;
+    expand: false;
+    str: "󰣇 ";
+    background-color: transparent;
+    /* NOTE: if you want to use actual blue color for arch linux logo */
+    /* text-color: rgba(30, 136, 229, 60%); */
+    text-color: rgba(43, 135, 255, 60%);
+    vertical-align: 0.5;
+    margin: 10px;
 }
 
-// Keys info section
 keys-info {
-    children:                              [
-                                             textbox-return-text, textbox-return-icon,
-                                             textbox-separator,
+    children: [
+        textbox-return-text, textbox-return-icon,
+        textbox-separator,
 
-                                             textbox-left-text, textbox-command-icon, textbox-left-icon,
-                                             textbox-separator,
+        textbox-left-text, textbox-command-icon, textbox-left-icon,
+        textbox-separator,
 
-                                             textbox-down-text, textbox-command-icon, textbox-down-icon,
-                                             textbox-separator,
+        textbox-down-text, textbox-command-icon, textbox-down-icon,
+        textbox-separator,
 
-                                             textbox-up-text, textbox-command-icon, textbox-up-icon,
-                                             textbox-separator,
+        textbox-up-text, textbox-command-icon, textbox-up-icon,
+        textbox-separator,
 
-                                             textbox-right-text, textbox-command-icon, textbox-right-icon
-                                           ];
+        textbox-right-text, textbox-command-icon, textbox-right-icon
+    ];
 
-    expand:                                false;
-    vertical-align:                        0.5;
-    orientation:                           horizontal;
-    spacing:                               0px;
-    background-color:                      transparent;
+    expand: false;
+    vertical-align: 0.5;
+    orientation: horizontal;
+    spacing: 0px;
+    background-color: transparent;
 }
 
-// Individual key binding text elements
 textbox-return-text {
-    str:                                   "Run";
-    expand:                                false;
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
-    padding:                               0 4px;
-    border-radius:                         4px;
-    background-color:                      transparent;
+    str: "Run";
+    expand: false;
+    text-color: @White;
+    vertical-align: 0.5;
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color: transparent;
 }
 
 textbox-return-icon {
-    str:                                   " 󰌑 ";
-    expand:                                false;
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
-    margin:                                8px 0;
-    padding:                               2px 10px 0px 5px;
-    border-radius:                         6px;
-    background-color:                      rgba (92, 101, 106, 12%);
+    str: " 󰌑 ";
+    expand: false;
+    text-color: @FG;
+    vertical-align: 0.5;
+    margin: 8px 0;
+    padding: 2px 10px 0px 5px;
+    border-radius: 6px;
+    background-color: rgba(92, 101, 106, 12%);
 }
 
 textbox-command-icon {
-    str:                                   "  ";
-    expand:                                false;
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
-    margin:                                8px 0;
-    padding:                               2px 10px 0px 5px;
-    border-radius:                         4px;
-    background-color:                      rgba (92, 101, 106, 12%);
+    str: "  ";
+    expand: false;
+    text-color: @FG;
+    vertical-align: 0.5;
+    margin: 8px 0;
+    padding: 2px 10px 0px 5px;
+    border-radius: 4px;
+    background-color: rgba(92, 101, 106, 12%);
 }
 
 textbox-down-text {
-    str:                                   "";
-    expand:                                false;
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
-    border-radius:                         4px;
-    background-color:                      transparent;
-    margin:                                8px 0;
-    padding:                               2px 10px 0px 5px;
+    str: "";
+    expand: false;
+    text-color: white;
+    vertical-align: 0.5;
+    border-radius: 4px;
+    background-color: transparent;
+    margin: 8px 0;
+    padding: 2px 10px 0px 5px;
 }
 
 textbox-down-icon {
-    str:                                   " J ";
-    expand:                                false;
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
-    margin:                                8px 2px 8px 6px;
-    padding:                               0 4px;
-    border-radius:                         4px;
-    background-color:                      rgba (92, 101, 106, 12%);
+    str: " J ";
+    expand: false;
+    text-color: white;
+    vertical-align: 0.5;
+    margin: 8px 2px 8px 6px;
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color: rgba(92, 101, 106, 12%);
 }
 
 textbox-up-text {
-    str:                                   "";
-    expand:                                false;
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
-    border-radius:                         4px;
-    background-color:                      transparent;
-    margin:                                8px 0;
-    padding:                               2px 10px 0px 5px;
+    str: "";
+    expand: false;
+    text-color: white;
+    vertical-align: 0.5;
+    border-radius: 4px;
+    background-color: transparent;
+    margin: 8px 0;
+    padding: 2px 10px 0px 5px;
 }
 
 textbox-up-icon {
-    str:                                   " K ";
-    expand:                                false;
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
-    margin:                                8px 2px 8px 6px;
-    padding:                               0 4px;
-    border-radius:                         4px;
-    background-color:                      rgba (92, 101, 106, 12%);
+    str: " K ";
+    expand: false;
+    text-color: white;
+    vertical-align: 0.5;
+    margin: 8px 2px 8px 6px;
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color: rgba(92, 101, 106, 12%);
 }
 
 textbox-left-text {
-    str:                                   "";
-    expand:                                false;
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
-    border-radius:                         4px;
-    background-color:                      transparent;
-    margin:                                8px 0;
-    padding:                               2px 10px 0px 5px;
+    str: "";
+    expand: false;
+    text-color: white;
+    vertical-align: 0.5;
+    border-radius: 4px;
+    background-color: transparent;
+    margin: 8px 0;
+    padding: 2px 10px 0px 5px;
 }
 
 textbox-left-icon {
-    str:                                   " H ";
-    expand:                                false;
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
-    margin:                                8px 2px 8px 6px;
-    padding:                               0 4px;
-    border-radius:                         4px;
-    background-color:                      rgba (92, 101, 106, 12%);
+    str: " H ";
+    expand: false;
+    text-color: white;
+    vertical-align: 0.5;
+    margin: 8px 2px 8px 6px;
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color: rgba(92, 101, 106, 12%);
 }
 
 textbox-right-text {
-    str:                                   "";
-    expand:                                false;
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
-    border-radius:                         4px;
-    background-color:                      transparent;
-    margin:                                8px 0;
-    padding:                               2px 10px 0px 5px;
+    str: "";
+    expand: false;
+    text-color: white;
+    vertical-align: 0.5;
+    border-radius: 4px;
+    background-color: transparent;
+    margin: 8px 0;
+    padding: 2px 10px 0px 5px;
 }
 
 textbox-right-icon {
-    str:                                   " L ";
-    expand:                                false;
-    text-color:                            @foreground-colour;
-    vertical-align:                        0.5;
-    margin:                                8px 2px 8px 6px;
-    padding:                               0 4px;
-    border-radius:                         4px;
-    background-color:                      rgba (92, 101, 106, 12%);
+    str: " L ";
+    expand: false;
+    text-color: white;
+    vertical-align: 0.5;
+    margin: 8px 2px 8px 6px;
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color: rgba(92, 101, 106, 12%);
 }
 
 textbox-separator {
-    str:                                   "|";
-    expand:                                true;
-    background-color:                      transparent;
-    vertical-align:                        0.5;
-    text-color:                            @alternate-background;
-    margin:                                2px;
+    str: "|";
+    expand: true;
+    background-color: transparent;
+    vertical-align: 0.5;
+    text-color: @DarkGray;
+    margin: 2px;
 }

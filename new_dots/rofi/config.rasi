@@ -12,4 +12,4 @@ configuration {
     // icon-theme: "";
 }
 
-@import "~/.config/rofi/themes/testing.rasi"
+@import "~/.config/rofi/themes/main.rasi"
