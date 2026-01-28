@@ -2,6 +2,6 @@
 plugins = ["scratchpads"]
 
 [scratchpads.term]
-command = "kitty --class kitty-dropterm"
-class = "kitty-dropterm"
-size = "75% 60%"
+command = "kitty --class kitty-terminal"
+class = "kitty-terminal"
+size = "80% 95%"
