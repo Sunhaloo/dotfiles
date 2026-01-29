@@ -6,6 +6,11 @@ command = "kitty --class kitty-terminal"
 class = "kitty-terminal"
 size = "80% 95%"
 
+[scratchpads.yazi]
+command = "kitty --class kitty-file -e yazi"
+class = "kitty-file"
+size = "80% 95%"
+
 [scratchpads.networkmanager]
 command = "kitty --class network -e nmtui"
 class = "network"
