@@ -5,3 +5,8 @@ plugins = ["scratchpads"]
 command = "kitty --class kitty-terminal"
 class = "kitty-terminal"
 size = "80% 95%"
+
+[scratchpads.networkmanager]
+command = "kitty --class network -e nmtui"
+class = "network"
+size = "40% 60%"

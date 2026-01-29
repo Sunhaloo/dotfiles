@@ -21,7 +21,6 @@
         "clock",
         "hyprland/workspaces",
         "pulseaudio",
-        "pulseaudio",
         "backlight",
         "network",
         "cpu",
@@ -80,7 +79,8 @@
             "ethernet": "󰈀",
             "disabled": "󰤭",
             "disconnected": "󰤩"
-        }
+        },
+        "on-click": "pypr toggle networkmanager"
     },
 
     // "pulseaudio": {
