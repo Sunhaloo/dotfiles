@@ -18,18 +18,18 @@
 
     "modules-center": [
         "custom/distro",
+        "clock",
         "hyprland/workspaces",
         "pulseaudio",
         "pulseaudio",
+        "backlight",
         "network",
-        "power-profiles-daemon",
         "cpu",
         "memory",
+        "custom/disk",
         "temperature",
-        "backlight",
         "battery",
-        "clock",
-
+        "power-profiles-daemon",
         "tray"
     ],
     "modules-right": [
@@ -39,6 +39,14 @@
         "format": "",
         "tooltip": false,
         "on-click": "wlogout"
+    },
+
+    "custom/disk": {
+        "interval": 10,
+        "exec": "bash $HOME/.config/waybar/scripts/disk-usage.sh 2> /dev/null",
+        "return-type": "json",
+        "format": "{icon} {percentage}%",
+        "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]
     },
 
     "hyprland/workspaces": {
@@ -77,19 +85,6 @@
 
     },
 
-    "group/audio": {
-        "orientation": "horizontal",
-        "drawer": {
-            "transition-duration": 400,
-            "children-class": "audio",
-            "transition-left-to-right": true
-        },
-        "modules": [
-            "pulseaudio",
-            "pulseaudio/slider"
-        ]
-    },
-
     // "pulseaudio": {
     //     // "scroll-step": 1, // %, can be a float
     //     "format": "{volume}% {icon}",
@@ -116,17 +111,9 @@
         "default": ["󰕿", "󰖀", "󰕾"]
         },
         "format-muted": "󰝟",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pavucontrol",
-        "scroll-step": 5,
-        "tooltip": true,
-        "tooltip-format": "Volume: {volume}%"
-    },
-
-    "pulseaudio/slider": {
-        "min": 0,
-        "max": 100,
-        "orientation": "horizontal"
+        "on-click": "pavucontrol",
+        "scroll-step": 1,
+        "tooltip": false
     },
 
     "backlight": {
@@ -153,16 +140,17 @@
 
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d}",
+        "format": " {:%H:%M}"
     },
 
     "cpu": {
-        "format": "{usage}% ",
+        "format": " {usage}%",
         "tooltip": false
     },
 
     "memory": {
-        "format": "{}% "
+        "format": " {}%"
     },
 
     "power-profiles-daemon": {
@@ -182,8 +170,8 @@
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", "", ""]
     },
 
     "tray": {

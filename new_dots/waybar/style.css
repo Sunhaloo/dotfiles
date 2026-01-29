@@ -5,7 +5,7 @@
     border: none;
     border-radius: 0px;
     font-family: "JetBrainsMono Nerd Font Propo";
-    font-size: 14px;
+    font-size: 12px;
     min-height: 0;
     margin: 0;
     padding: 0;
@@ -60,6 +60,7 @@ window#waybar {
 }
 
 #custom-distro,
+#custom-disk,
 #clock,
 #network,
 #power-profiles-daemon,
@@ -85,7 +86,7 @@ window#waybar {
 
 tooltip {
     background-color: @background;
-    border: 1px solid @selection-foreground;
+    border: 1px solid @foreground;
     padding: 10px;
     border-radius: 6px;
 }
