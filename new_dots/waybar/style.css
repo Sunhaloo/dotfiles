@@ -4,6 +4,7 @@
     all: initial;
     border: none;
     border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font Propo";
     font-size: 14px;
     min-height: 0;
     margin: 0;
@@ -16,19 +17,20 @@ window#waybar {
 
 .modules-center {
     background-color: @background;
-    padding: 6px 12px;
-    border-radius: 28px;
+    padding: 4px 12px;
+    border-radius: 8px;
 }
 
 tooltip {
     background-color: @background;
     border: 1px solid @selection-foreground;
-    border-radius: 12px;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 tooltip label {
     color: @foreground;
-    padding: 6px;
+    padding: 4px;
 }
 
 #workspaces {
@@ -36,14 +38,14 @@ tooltip label {
     padding: 4px 2px;
     margin: 0 10px 0 10px;
     border: none;
-    border-radius: 16px;
+    border-radius: 8px;
     box-shadow: none;
 }
 
 #workspaces button {
-    padding: 0 6px;
-    margin: 0 2px;
-    border-radius: 16px;
+    padding: 0 4px;
+    margin: 0 6px;
+    border-radius: 6px;
     color: @color0;
     background: transparent;
     transition: all 0.1s ease-in-out;
@@ -79,10 +81,10 @@ tooltip label {
 #backlight,
 #battery,
 #tray {
-    background-color: @background;
-    padding: 0 8px;
+    background-color: rgba(67, 73, 77, 0.5);
+    padding: 0 10px;
     margin: 0 5px;
     border: none;
-    border-radius: 0;
+    border-radius: 8px;
     box-shadow: none;
 }
