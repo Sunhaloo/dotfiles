@@ -13,15 +13,13 @@
     // "margin": 0,
     "margin-top": 4,
     "modules-left": [
-        "group/audio",
-        "group/brightness",
-        "pulseaudio/slider"
+
     ],
 
     "modules-center": [
         "custom/distro",
         "hyprland/workspaces",
-        "clock",
+        "pulseaudio",
         "pulseaudio",
         "network",
         "power-profiles-daemon",
@@ -30,6 +28,8 @@
         "temperature",
         "backlight",
         "battery",
+        "clock",
+
         "tray"
     ],
     "modules-right": [
@@ -78,11 +78,11 @@
     },
 
     "group/audio": {
-        "orientation": "inherit",
+        "orientation": "horizontal",
         "drawer": {
-        "transition-duration": 400,
-        "children-class": "audio",
-        "transition-left-to-right": false
+            "transition-duration": 400,
+            "children-class": "audio",
+            "transition-left-to-right": true
         },
         "modules": [
             "pulseaudio",
@@ -111,7 +111,7 @@
     // },
 
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "{icon} {volume}%",
         "format-icons": {
         "default": ["󰕿", "󰖀", "󰕾"]
         },
