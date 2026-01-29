@@ -13,8 +13,11 @@
     // "margin": 0,
     "margin-top": 4,
     "modules-left": [
-
+        "group/audio",
+        "group/brightness",
+        "pulseaudio/slider"
     ],
+
     "modules-center": [
         "custom/distro",
         "hyprland/workspaces",
@@ -30,12 +33,12 @@
         "tray"
     ],
     "modules-right": [
-
     ],
 
     "custom/distro": {
         "format": "",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "wlogout"
     },
 
     "hyprland/workspaces": {
@@ -57,40 +60,73 @@
             // "active": "",
             "default": "󰄰"
         }
-
-        // "persistent-workspaces": {
-        //     "*": 5
-        // }
     },
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "{icon}",
+        "format-ethernet": "{icon}",
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "format-disconnected": "{icon}",
+        "format-icons": {
+            "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+            "ethernet": "󰈀",
+            "disabled": "󰤭",
+            "disconnected": "󰤩"
+        }
+
     },
 
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+    "group/audio": {
+        "orientation": "inherit",
+        "drawer": {
+        "transition-duration": 400,
+        "children-class": "audio",
+        "transition-left-to-right": false
         },
-        "on-click": "pavucontrol"
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ]
+    },
+
+    // "pulseaudio": {
+    //     // "scroll-step": 1, // %, can be a float
+    //     "format": "{volume}% {icon}",
+    //     "format-bluetooth": "{volume}% {icon} {format_source}",
+    //     "format-bluetooth-muted": " {icon} {format_source}",
+    //     "format-muted": " {format_source}",
+    //     "format-source": "{volume}% ",
+    //     "format-source-muted": "",
+    //     "format-icons": {
+    //         "headphone": "",
+    //         "hands-free": "",
+    //         "headset": "",
+    //         "phone": "",
+    //         "portable": "",
+    //         "car": "",
+    //         "default": ["", "", ""]
+    //     },
+    //     "on-click": "pavucontrol"
+    // },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-icons": {
+        "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "format-muted": "󰝟",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "scroll-step": 5,
+        "tooltip": true,
+        "tooltip-format": "Volume: {volume}%"
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
     },
 
     "backlight": {
