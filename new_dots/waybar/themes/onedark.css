@@ -1,0 +1,38 @@
+@define-color background              #282C34;
+@define-color foreground              #ABB2BF;
+@define-color selection-background    #ABB2BF;
+@define-color selection-foreground    #282C34;
+@define-color cursor                  #ABB2BF;
+@define-color cursor-text-color       #282C34;
+@define-color url-color               #ABB2BF;
+
+@define-color active-tab-foreground   #3F4451;
+@define-color active-tab-background   #D7DAE0;
+@define-color inactive-tab-foreground #ABB2BF;
+@define-color inactive-tab-background #282C34;
+
+@define-color color0                  #3F4451;
+@define-color color8                  #4F5666;
+
+@define-color color1                  #E06C75;
+@define-color color9                  #BE5046;
+
+@define-color color2                  #98C379;
+@define-color color10                 #A5E075;
+
+@define-color color3                  #D19A66;
+@define-color color11                 #E5C07B;
+
+@define-color color4                  #61AFEF;
+@define-color color12                 #4DC4FF;
+
+@define-color color5                  #C678DD;
+@define-color color13                 #DE73FF;
+
+@define-color color6                  #56B6C2;
+@define-color color14                 #4CD1E0;
+
+@define-color color7                  #D7DAE0;
+@define-color color15                 #E6E6E6;
+
+@define-color translucent             rgba(67, 73, 77, 0.5);
