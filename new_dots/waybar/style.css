@@ -17,28 +17,16 @@ window#waybar {
 
 .modules-center {
     background-color: @background;
-    padding: 4px 12px;
-    border-radius: 8px;
-}
-
-tooltip {
-    background-color: @background;
-    border: 1px solid @selection-foreground;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-tooltip label {
-    color: @foreground;
-    padding: 4px;
+    padding: 4px 6px;
+    border-radius: 6px;
 }
 
 #workspaces {
-    background: rgba(67, 73, 77, 0.5);
+    background: @translucent;
     padding: 4px 2px;
     margin: 0 10px 0 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     box-shadow: none;
 }
 
@@ -46,20 +34,21 @@ tooltip label {
     padding: 0 4px;
     margin: 0 6px;
     border-radius: 6px;
+    min-width: 20px;
     color: @color0;
     background: transparent;
     transition: all 0.1s ease-in-out;
 }
 
 #workspaces button.active {
-    background: linear-gradient(135deg, @color4 0%, @color5 50%, @color1 100%);
+    background: @cursor;
     color: @foreground;
     min-width: 20px;
     transition: all 0.1s ease-in-out;
 }
 
 #workspaces button:hover {
-    background: linear-gradient(310deg, @color4 0%, @color5 50%, @color1 100%);
+    background: @cursor;
     color: @foreground;
     min-width: 20px;
 }
@@ -80,11 +69,44 @@ tooltip label {
 #temperature,
 #backlight,
 #battery,
+#menu,
 #tray {
-    background-color: rgba(67, 73, 77, 0.5);
-    padding: 0 10px;
+    background-color: @translucent;
+    padding: 0 8px;
     margin: 0 5px;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     box-shadow: none;
+}
+
+#custom-distro {
+    color: @color12;
+}
+
+tooltip {
+    background-color: @background;
+    border: 1px solid @selection-foreground;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+tooltip label {
+    color: @foreground;
+    padding: 4px;
+}
+
+menu {
+    background-color: @background;
+    color: @foreground;
+    padding: 8px;
+    border: 2px solid @foreground;
+    border-radius: 6px;
+}
+
+menuitem {
+    padding: 2px 8px;
+}
+
+menuitem:hover {
+    background-color: @selection-foreground;
 }

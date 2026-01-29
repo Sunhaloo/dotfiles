@@ -28,3 +28,5 @@
 
 @define-color color7                  #AAAAAA;
 @define-color color15                 #CCCCCC;
+
+@define-color translucent             rgba(67, 73, 77, 0.5);

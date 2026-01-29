@@ -13,4 +13,3 @@ if [ -n "$WALLPAPER" ]; then
     --transition-fps 60 \
     --transition-duration 2
 fi
-
