@@ -36,7 +36,8 @@
 
     "custom/distro": {
         "format": "",
-        "tooltip": false
+        "tooltip": false,
+	"on-click": "swaylock"
     },
 
     "custom/disk": {
