@@ -1,0 +1,74 @@
+#| hold these keys together to exit kanata
+<LCtrl> + <Space> + <Esc>
+|#
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+
+;; define the order of keys that default layer will operate on
+;; basically we are going to place our keys that we want to remap here
+(defsrc
+  caps
+  rsft
+  ralt
+  h
+  j
+  k
+  l
+)
+
+
+;; define the variable for time
+(defvar
+    tap-time-fast 20
+    tap-time-slow 60
+    hold-time-fast 65
+    hold-time-slow 100
+)
+
+
+;; consider this function
+(defalias
+  ;; this will define caps lock key for a tab-hold behaviour
+  ;; "tapping" within 80 will trigger <Esc>
+  ;; "holding" within 65 will trigger <LCtrl>
+  ;; cap_esc_ctrl (tap-hold 80 65 esc lctl)
+
+  cap_esc_ctrl (tap-hold $tap-time-slow $hold-time-fast esc lctl)
+  ;; "tapping" within 20 will trigger <Esc>
+  ;; "holding" within 100 will trigger <RShift>
+
+  rshift_bspc_shift (tap-hold $tap-time-fast $hold-time-slow bspc rsft)
+
+  ;; make the layer variable
+  right_alt (layer-while-held vim_arrows)
+  ;; actually make the right alt key
+  r_alt_hold_layer (tap-hold $tap-time-slow $hold-time-fast ralt @right_alt)
+)
+
+
+;; consider this "function" to be like our main function in Python
+;; in this case the "function" is called `base` and we are "running" `lctl`
+(deflayer base
+  ;; basically run the alias "function"
+  @cap_esc_ctrl
+  @rshift_bspc_shift
+  @r_alt_hold_layer
+  _ ;; h
+  _ ;; j
+  _ ;; k
+  _ ;; l
+)
+
+
+(deflayer vim_arrows
+  _       ;; caps (position 1)
+  _       ;; rsft (position 2)
+  _       ;; ralt (position 3)
+  left    ;; h (position 8)
+  down    ;; j (position 9)
+  up      ;; k (position 10)
+  right   ;; l (position 11)
+)

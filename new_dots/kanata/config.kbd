@@ -1,0 +1,101 @@
+;; to force quit kanata, press the following key combination: <LCtrl> + <Space> + <Esc>
+
+;; kanata configurations
+(defcfg
+  ;; allows us to use the key that are not remapped with default behaviour
+  process-unmapped-keys yes
+  ;; allows for chording / combos
+  concurrent-tap-hold yes
+)
+
+
+;; define variables for tap times and hold times
+(defvar
+  default-tap-time 200
+  default-hold-time 200
+  tap-time 125
+  hold-time 125
+  fast-tap-time 80
+  fast-hold-time 80
+  chord-timeout 50
+)
+
+;; physical keyboard layout for Dell Latitude E7450 keyboard
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt ins  del
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rctl pgup up   pgdn
+                                                   left down rght
+)
+
+;; chord definitions
+(defchords chords $chord-timeout
+  (j) j
+  (k) k
+  (j k) esc
+)
+
+;; definitions of keymappings for individual key "variables"
+(defalias
+  ;; define the navigation - number layer
+  nav_layer (layer-while-held navigation_numbers)
+  ;; define the symbols layer
+  sym_layer (layer-while-held symbols)
+  ;; define the mouse layer
+  mouse_layer (layer-while-held mouse)
+
+  ;; define the left hand side outer right thumb key --> 'Space' and 'Symbols Layer'
+  Spc_Sym_Hold (tap-hold $tap-time $hold-time spc @sym_layer)
+  ;; define the right hand side outer left thumb key --> 'Navigation Layer'
+  RAlt_Nav @nav_layer
+  ;; define the mouse layer in-place of original control key
+  LCtrl_Mouse @mouse_layer
+  ;; change the 'Caps Lock' --> Left 'Ctrl'
+  Caps_Lock_LCtrl lctl
+)
+
+;; my base layer
+(deflayer base
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  tab  q    w    e    r    t    y    u    i    o    p    bspc _    _
+  @Caps_Lock_LCtrl a    s    d    f    g    h    (chord chords j)    (chord chords k)    l    ;    '    _
+  lsft z    x    c    v    b    n    m    ,    .    /    lalt
+  @LCtrl_Mouse    lalt    lmet           @Spc_Sym_Hold            @RAlt_Nav _   _    _    _
+                                                              _    _    _
+)
+
+;; my navigation-numbers layer
+(deflayer navigation_numbers
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    1    2    3    4    5    6    7    8    9    0    _    _    _
+  _    a    s    ins  home pgup left down up   rght XX   XX   _
+  _    f4   f2   del  end  pgdn XX   XX   _    _    prnt XX
+  _    _    _              _              _    _    _    _    _
+                                               _    _    _
+)
+
+;; my symbols layer
+(deflayer symbols
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  -    XX   _    _    _
+  _    S-\  \    S--  S-9  S-[  S-]  S-0  =    grv  S-;  S-'  _
+  _    XX   XX   XX   [    S-,  S-.  ]    S-=  S-grv \   XX
+  _    _    _              _              _    _    _    _    _
+                                               _    _    _
+)
+
+(deflayer mouse
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  XX   XX   (mwheel-down 50 120) (movemouse-up 1 1) (mwheel-up 50 120) XX XX f12 f11 f10 f9 _ _ _
+  XX   (mwheel-left 50 120) (movemouse-left 1 1) (movemouse-down 1 1) (movemouse-right 1 1) (mwheel-right 50 120) XX f8 f7 f6 f5 XX _
+  XX   XX   XX   XX   XX   XX   XX   f4   f3   f2   f1   XX
+  _    _    mmid mlft           mrgt           ent  _    _    _
+                                                    _    _    _
+)
