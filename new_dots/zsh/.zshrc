@@ -45,13 +45,15 @@ eval "$(starship init zsh)"
 
 
 # == Aliases ==
-# System - eza
+# system tools
 alias ls='eza --no-user --no-time --no-permissions --icons=always'
 alias ll='eza -la --no-user --no-time --no-permissions --icons=always'
 alias lt='eza -T --icons=always'
 
+# terminal applications
 alias nv="nvim"
 
+# functions
 alias t="$HOME/.config/tmux/scripts/tmux_startup.sh"
 
 # == Keybindings ==

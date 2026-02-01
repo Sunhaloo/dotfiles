@@ -1,3 +1,2 @@
-// Main file where it will simply go into the colors directory and import the proper color
-
+// main file where it will simply go into the colors directory and import the proper color
 @import "~/.config/rofi/themes/colors/deepspace.rasi"
