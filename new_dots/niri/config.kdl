@@ -99,6 +99,51 @@ screenshot-path "~/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
 }
 
+// Workspaces ( emulating general windows managers instead of dynamic workspaces )
+
+// workspace 1
+workspace "a" {
+    // This regular expression is intentionally made as specific as possible,
+}
+
+// workspace 2
+workspace "b" {
+    // This regular expression is intentionally made as specific as possible,
+}
+
+// workspace 3
+workspace "c" {
+    // This regular expression is intentionally made as specific as possible,
+}
+// workspace 4
+workspace "d" {
+    // This regular expression is intentionally made as specific as possible,
+}
+
+// window rules for the above workspaces
+window-rule {
+    match app-id="obsidian"
+    open-on-workspace "a"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="kitty"
+    open-on-workspace "b"
+}
+
+window-rule {
+    match app-id="zen"
+    open-on-workspace "c"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="thunar"
+    open-on-workspace "d"
+    open-maximized true
+}
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
