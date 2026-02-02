@@ -1,0 +1,14 @@
+[pyprland]
+plugins = [
+  "scratchpads"
+]
+
+[scratchpads.term]
+command = "kitty --class scratchpad -o font_size=14.0"
+margin = 50
+size = "60% 80%"
+
+[scratchpads.yazi]
+command = "kitty --class scratchpad -o font_size=14.0 -e yazi"
+margin = 50
+size = "60% 80%"

@@ -1,14 +1,17 @@
 [pyprland]
-plugins = [
-  "scratchpads"
-]
+plugins = ["scratchpads"]
 
 [scratchpads.term]
-command = "kitty --class scratchpad -o font_size=14.0"
-margin = 50
-size = "60% 80%"
+command = "kitty --class kitty-terminal"
+class = "kitty-terminal"
+size = "80% 95%"
 
 [scratchpads.yazi]
-command = "kitty --class scratchpad -o font_size=14.0 -e yazi"
-margin = 50
-size = "60% 80%"
+command = "kitty --class kitty-file -e yazi"
+class = "kitty-file"
+size = "80% 95%"
+
+[scratchpads.networkmanager]
+command = "kitty --class network -e nmtui"
+class = "network"
+size = "40% 60%"

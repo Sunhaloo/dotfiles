@@ -1,15 +1,15 @@
-configuration{
-	
-	display-drun: "  ";
-	display-run: "  ";
-	display-emoji: "     ";
-	display-calc: "  󰍘 ";
-	drun-display-format: "{icon} {name}";
-	show-icons: true;
-    icon-theme: "Papirus-Dark";
-	modi: "run,drun";
+configuration {
+    // rofi allowed modes
+    modi: "run,drun";
 
+    // input bar icons
+    display-run: "  ";
+    display-drun: "  ";
+
+    // application icons
+    show-icons: true;
+    // icon theme to be added later
+    // icon-theme: "";
 }
 
-// == Theme ==
-@theme "~/.config/rofi/themes/deepspace.rasi"
+@import "~/.config/rofi/themes/main.rasi"
