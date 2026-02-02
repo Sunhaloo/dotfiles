@@ -1,11 +1,4 @@
 {
-    "include": [
-        "~/.config/waybar/modules/hyprland/*.jsonc",
-        "~/.config/waybar/modules/custom/*.jsonc",
-        "~/.config/waybar/modules/*.jsonc"
-
-    ],
-
     // "layer": "top"
     "height": 0,
     "width": 0,
@@ -19,7 +12,7 @@
     "modules-center": [
         "custom/distro",
         "clock",
-        "hyprland/workspaces",
+        "niri/workspaces",
         "pulseaudio",
         "backlight",
         "network",
@@ -48,7 +41,7 @@
         "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]
     },
 
-    "hyprland/workspaces": {
+    "niri/workspaces": {
         "cursor": true,
         "format": "{icon}",
         "format-icons": {

@@ -130,10 +130,11 @@ window-rule {
 window-rule {
     match app-id="kitty"
     open-on-workspace "b"
+    open-maximized true
 }
 
 window-rule {
-    match app-id="zen"
+    match app-id="Thorium-browser"
     open-on-workspace "c"
     open-maximized true
 }
@@ -334,7 +335,7 @@ binds {
     // window: applications
     Mod+Q repeat=false { close-window; }
     Mod+Return hotkey-overlay-title="Open Terminal: Kitty Terminal" { spawn "kitty"; }
-    Mod+Shift+B hotkey-overlay-title="Open Browser" { spawn "zen-browser"; }
+    Mod+Shift+B hotkey-overlay-title="Open Browser" { spawn "thorium-browser"; }
     Mod+Shift+T hotkey-overlay-title="Open File Manager" { spawn "thunar"; }
     Mod+Shift+O hotkey-overlay-title="Open File Manager" { spawn "obsidian"; }
     Mod+W hotkey-overlay-title="Open File Manager" { spawn-sh "pkill -USR1 waybar"; }
@@ -344,7 +345,7 @@ binds {
 // Cursor customisation
 cursor {
     xcursor-theme "Bibata-Modern-Ice"
-    xcursor-size 16
+    xcursor-size 24
     hide-after-inactive-ms 1000 
     hide-when-typing
 }
