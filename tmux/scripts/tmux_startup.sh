@@ -25,15 +25,16 @@ tmux_populate() {
   tmux new-window -d -t "${session_name}:2" -c "$directory"
   tmux new-window -d -t "${session_name}:3" -c "$directory"
   tmux new-window -d -t "${session_name}:4" -c "$directory"
+  tmux new-window -d -t "${session_name}:5" -c "$directory"
 
-  # setup panes for last window ==> window 4
-  tmux split-window -h -t "${session_name}:4.1" -c "$directory"
-  tmux select-layout -t "${session_name}:4" even-horizontal
-  tmux split-window -v -t "${session_name}:4.2" -c "$directory"
+  # setup panes for last window ==> window 5
+  tmux split-window -h -t "${session_name}:5.1" -c "$directory"
+  tmux select-layout -t "${session_name}:5" even-horizontal
+  tmux split-window -v -t "${session_name}:5.2" -c "$directory"
 
   # send specific command to specific windows and panes
-  tmux send-keys -t "${session_name}:1.1" "nvim" C-m
-  tmux send-keys -t "${session_name}:3.1" "ls" C-m
+  # tmux send-keys -t "${session_name}:1.1" "nvim" C-m
+  # tmux send-keys -t "${session_name}:3.1" "ls" C-m
 }
 
 # custom startup tmux function
