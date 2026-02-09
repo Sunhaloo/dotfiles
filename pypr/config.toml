@@ -4,14 +4,14 @@ plugins = ["scratchpads"]
 [scratchpads.term]
 command = "kitty --class kitty-terminal"
 class = "kitty-terminal"
-size = "80% 95%"
+size = "70% 90%"
 
 [scratchpads.yazi]
 command = "kitty --class kitty-file -e yazi"
 class = "kitty-file"
-size = "80% 95%"
+size = "70% 90%"
 
 [scratchpads.networkmanager]
 command = "kitty --class network -e nmtui"
 class = "network"
-size = "40% 60%"
+size = "40% 65%"
