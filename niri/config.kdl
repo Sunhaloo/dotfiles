@@ -83,6 +83,11 @@ spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "dunst" "-config" "~/.config/dunst/dunstrc"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
+spawn-at-startup "swayidle" "-w" \
+    "timeout" "180" "niri msg action power-off-monitors" \
+    "resume" "niri msg action power-on-monitors" \
+    "before-sleep" "swaylock -f"
+
 hotkey-overlay {
     skip-at-startup
 }
