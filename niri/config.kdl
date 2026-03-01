@@ -88,6 +88,9 @@ spawn-at-startup "swayidle" "-w" \
     "resume" "niri msg action power-on-monitors" \
     "before-sleep" "swaylock -f"
 
+// WARNING: testing
+spawn-at-startup "sh" "-c" "~/.config/niri/scripts/git-pull.sh"
+
 hotkey-overlay {
     skip-at-startup
 }

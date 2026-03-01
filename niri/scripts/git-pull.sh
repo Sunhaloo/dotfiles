@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# WARNING: need to sleep the script to allow everything to load up!
+notify-send "GitHub Pull Script Starting..."
+sleep 5
+
 # paths "constants"
 REPO_DIR="$HOME/GitHub"
 OBSIDIAN_REPO_DIR="obsidian"
