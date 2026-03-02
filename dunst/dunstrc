@@ -226,4 +226,3 @@
     override_pause_level = 60
     # Icon for notifications with critical urgency
     default_icon = dialog-warning
-    format = "<b>%s</b> %b"
