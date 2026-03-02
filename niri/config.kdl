@@ -73,7 +73,6 @@ layout {
 
 // Autostart programs
 spawn-at-startup "pypr"
-spawn-at-startup "dunst"
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
 

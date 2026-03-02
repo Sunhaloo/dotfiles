@@ -31,7 +31,7 @@
     progress_bar_max_width = 300
     progress_bar_corner_radius = 0
     progress_bar_corners = all
-    
+
     # image icon
     icon_corner_radius = 0
     icon_corners = all
@@ -226,3 +226,4 @@
     override_pause_level = 60
     # Icon for notifications with critical urgency
     default_icon = dialog-warning
+    format = "<b>%s</b> %b"
