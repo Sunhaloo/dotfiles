@@ -13,10 +13,10 @@
   },
 
   // font
-  "ui_font_size": 18,
-  "buffer_font_size": 18,
-  "agent_ui_font_size": 18,
-  "agent_buffer_font_size": 18,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "agent_ui_font_size": 16,
+  "agent_buffer_font_size": 16,
   "ui_font_family": "Ioskeley Mono Nerd Font",
   "buffer_font_family": "Ioskeley Mono Nerd Font",
 
@@ -120,7 +120,16 @@
     },
   },
 
-  // agent panel
+  // agent / large language models
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o",
+      "enable_thinking": false,
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
 
   // "command palette" file search
   "file_finder": {
