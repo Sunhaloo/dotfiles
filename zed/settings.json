@@ -1,0 +1,167 @@
+{
+  // general settings
+  "auto_update": false,
+  "close_on_file_delete": true,
+  "restore_on_startup": "empty_tab",
+  "relative_line_numbers": "enabled",
+  "when_closing_with_no_tabs": "keep_window_open",
+
+  // telemetry and diagnostics
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+
+  // font
+  "ui_font_size": 18,
+  "buffer_font_size": 18,
+  "agent_ui_font_size": 18,
+  "agent_buffer_font_size": 18,
+  "ui_font_family": "Ioskeley Mono Nerd Font",
+  "buffer_font_family": "Ioskeley Mono Nerd Font",
+
+  // appearance
+  "theme": "Aura Dark",
+  "icon_theme": "JetBrains New UI Icons (Dark)",
+  "cursor_blink": false,
+  "show_whitespaces": "trailing",
+
+  // show little description on hover cursor
+  "hover_popover_enabled": false,
+
+  // colourscheme overrides
+  "theme_overrides": {
+    "Aura Dark": {
+      "border.variant": "#15141C",
+      "border": "#15141C",
+      "title_bar.background": "#15141C",
+      "panel.background": "#15141C",
+      "pane.focused_border": "#4E466E",
+      "syntax": {
+        "comment": {
+          "font_style": "italic",
+        },
+        "comment.doc": {
+          "font_style": "italic",
+        },
+      },
+    },
+  },
+
+  // editor scroll bar
+  "scrollbar": {
+    "show": "never",
+  },
+
+  // indentation guides
+  "indent_guides": {
+    "line_width": 1,
+    "active_line_width": 2,
+    "coloring": "indent_aware",
+  },
+
+  // remove left padding completely
+  "gutter": {
+    "folds": false,
+    "min_line_number_digits": 0,
+    // break-point "thingy" before line numbers
+    "runnables": false,
+  },
+
+  // top most bar
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_project_items": true,
+    "show_branch_name": true,
+    "show_user_menu": true,
+  },
+
+  // tab bar
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false,
+  },
+
+  // tabs itself
+  "tabs": {
+    "git_status": true,
+    "close_position": "right",
+    "show_close_button": "always",
+    "file_icons": true,
+    "show_diagnostics": "all",
+  },
+
+  // the toolbar
+  "toolbar": {
+    "quick_actions": false,
+  },
+
+  // project panel ( i.e file explorer )
+  "project_panel": {
+    "default_width": 300,
+    "hide_root": true,
+    "auto_fold_dirs": false,
+    "starts_open": false,
+    "sticky_scroll": false,
+    "scrollbar": {
+      "show": "never",
+    },
+    "indent_guides": {
+      "show": "always",
+    },
+  },
+
+  //
+  "outline_panel": {
+    "default_width": 300,
+    "indent_guides": {
+      "show": "always",
+    },
+  },
+
+  // agent panel
+
+  // "command palette" file search
+  "file_finder": {
+    "modal_max_width": "medium",
+  },
+
+  // terminals settings
+  "terminal": {
+    "working_directory": "current_file_directory",
+  },
+
+  // my beloved VIM motions!!!
+  "vim_mode": true,
+  "selection_highlight": false,
+
+  // vim configuration
+  "vim": {
+    "use_system_clipboard": "always",
+  },
+
+  // editor coding / typing related
+  "tab_size": 2,
+  "auto_indent": true,
+  "auto_indent_on_paste": true,
+  "extend_comment_on_newline": false,
+  "seed_search_query_from_cursor": "never",
+  "drag_and_drop_selection": {
+    "enabled": false,
+  },
+  "inline_code_actions": false,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 2000,
+    },
+  },
+
+  // git settings
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+}

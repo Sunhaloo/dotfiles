@@ -1,0 +1,67 @@
+[
+  // unbind default ctrl-/ (toggle comments)
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-/": null,
+    },
+  },
+
+  // terminal
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
+  },
+
+  // insert mode
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {},
+  },
+
+  // visual mode
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "j k": "vim::NormalBefore",
+    },
+  },
+
+  // normal mode
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "ctrl-a": "editor::SelectAll",
+
+      "s h": "pane::SplitDown",
+      "s v": "pane::SplitRight",
+
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePreviousItem",
+
+      "t e": "workspace::NewFile",
+
+      "+": ["workspace::SendKeystrokes", "ctrl-a"],
+      "-": ["workspace::SendKeystrokes", "ctrl-x"],
+
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-\\": "workspace::ActivatePreviousPane",
+
+      "space f f": "file_finder::Toggle",
+    },
+  },
+
+  // BUG: apparently, if I have this ( see below ) the keybinds will work
+  // anywhere else it does not work...
+  {
+    "bindings": {
+      "ctrl-/": "terminal_panel::ToggleFocus",
+    },
+  },
+]
