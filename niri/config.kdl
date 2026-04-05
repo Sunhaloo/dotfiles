@@ -74,7 +74,7 @@ layout {
 // Autostart programs
 spawn-at-startup "pypr"
 spawn-at-startup "waybar"
-spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
 
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
@@ -87,7 +87,7 @@ spawn-at-startup "swayidle" "-w" \
     "resume" "niri msg action power-on-monitors" \
     "before-sleep" "swaylock -f"
 
-// WARNING: testing
+// Personal scripts
 spawn-at-startup "sh" "-c" "~/.config/niri/scripts/git-pull.sh"
 
 hotkey-overlay {
