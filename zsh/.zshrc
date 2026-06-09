@@ -1,4 +1,4 @@
-# == Default Programs ==
+# Default Programs
 export EDITOR="nvim"
 export TERM="kitty"
 export TERMINAL="kitty"
@@ -6,39 +6,37 @@ export BROWSER="zen-browser"
 export FILE_MANAGER="thunar"
 
 
-# == XDG Base Directory ==
+# XDG Base Directory
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 
-# == Paths ==
-export PATH="$PATH:/home/azmaan/.local/bin"
+# Paths
+export PATH="$PATH:$HOME/.local/bin"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
-export STARSHIP_CACHE="$XDG_CONFIG_HOME/starship/"
+export STARSHIP_CACHE="$XDG_CACHE_HOME/starship/"
 
-# == Options ==
+
+# Options
 HISTSIZE=7500
 SAVEHIST=7500
 HISTCONTROL=ignoreboth
 HISTFILE="$XDG_CACHE_HOME/zsh_history"
 
-# == Load zsh-syntax-highlighting and zsh-autosuggestions ==
-if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-elif [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+
+# Load 'zsh-syntax-highlighting' and 'zsh-autosuggestions'
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
-if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-elif [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 
-# == Source Other Programs ==
+# Source Other Programs
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"

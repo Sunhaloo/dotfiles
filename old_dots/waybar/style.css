@@ -1,105 +1,113 @@
+@import "themes/deepspace.css";
+
 * {
-  font-family: "BlexMono Nerd Font Propo";
-  font-size: 12px;
-  min-height: 10px;
-  min-width: 10px;
-  border: none;
-  border-radius: 6px;
-  transition: none;
+    all: initial;
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-size: 12px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 window#waybar {
-  background-color: transparent;
+    background-color: transparent;
 }
 
-.modules-left {
-  padding: 1px;
-  background: rgba(13, 14, 17, 0.8);
-  margin: 2px 0px 0px 8px;
-}
 .modules-center {
-  padding: 1px;
-  background: rgba(13, 14, 17, 0.8);
-  margin: 2px 0px 0px 0px;
+    background-color: @background;
+    padding: 4px 6px;
+    border-radius: 6px;
 }
-.modules-right {
-  padding: 1px;
-  background: rgba(13, 14, 17, 0.8);
-  margin: 2px 8px 0px 0px;
+
+#workspaces {
+    background: @translucent;
+    padding: 4px 2px;
+    margin: 0 10px 0 10px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: none;
 }
 
 #workspaces button {
-  padding: 2px;
-  margin: 6px 6px 6px 0px;
-  color: #dee4df;
-}
-
-#workspaces button:hover {
-  color: #cccccc;
-  background-color: rgba(136, 136, 136, 0.5);
-  font-weight: 700;
+    padding: 0 4px;
+    margin: 0 6px;
+    border-radius: 6px;
+    min-width: 20px;
+    color: @color0;
+    background: transparent;
+    transition: all 0.1s ease-in-out;
 }
 
 #workspaces button.active {
-  color: #cccccc;
-  background-color: rgba(136, 136, 136, 0.5);
-  font-weight: 700;
+    background: @cursor;
+    color: @foreground;
+    min-width: 20px;
+    transition: all 0.1s ease-in-out;
 }
 
-#custom-logo {
-  margin: 6px 6px 6px 6px;
-  color: #dee4df;
+#workspaces button:hover {
+    background: @cursor;
+    color: @foreground;
+    min-width: 20px;
 }
 
-#custom-logo:hover {
-  margin: 6px 12px 6px 6px;
-  color: #1e88e5;
+#workspaces button.urgent {
+    background-color: @color1;
+    color: @foreground;
+    min-width: 20px;
 }
 
-tooltip {
-  background: rgba(0, 0, 0, 0.9);
-  border: 2px #0d0e11;
-  color: #dee4df;
-  padding: 6px;
-}
-
-#clock {
-  margin: 6px 6px 6px 6px;
-  color: #dee4df;
-}
-
-#tray,
-#pulseaudio,
+#custom-distro,
+#custom-disk,
+#clock,
 #network,
 #power-profiles-daemon,
 #cpu,
 #memory,
+#temperature,
 #backlight,
-#battery {
-  margin: 6px 0px 6px 10px;
-  color: #dee4df;
+#battery,
+#menu,
+#pulseaudio,
+#tray {
+    background-color: @translucent;
+    padding: 0 8px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: none;
 }
 
-#temperature {
-  margin: 6px 12px 6px 12px;
-  color: #dee4df;
+#custom-distro {
+    color: @color12;
 }
 
-/* WARNING: still need to finalise the colours as DeepSpace does not have 'Orange' */
-#battery.warning {
-  color: #21798a;
+tooltip {
+    background-color: @background;
+    border: 1px solid @foreground;
+    padding: 10px;
+    border-radius: 6px;
 }
 
-#battery.critical {
-  color: #e8aa32;
+tooltip label {
+    color: @foreground;
+    padding: 4px;
 }
 
-#battery.urgent {
-  font-weight: 700;
-  color: #e62d2d;
+menu {
+    background-color: @background;
+    color: @foreground;
+    padding: 8px;
+    border: 2px solid @foreground;
+    border-radius: 6px;
 }
 
-#temperature.critical {
-  font-weight: 700;
-  color: #e62d2d;
+menuitem {
+    padding: 2px 8px;
+}
+
+menuitem:hover {
+    background-color: @selection-foreground;
 }

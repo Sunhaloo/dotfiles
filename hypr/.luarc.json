@@ -1,0 +1,10 @@
+{
+  "workspace": {
+    "library": [
+      "/home/azmaan/.config/hypr"
+    ]
+  },
+  "diagnostics:": {
+     "globals": ["hl"]
+  }
+}
