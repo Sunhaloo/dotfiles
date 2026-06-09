@@ -127,7 +127,7 @@ hl.bind(
 hl.bind(
     mod .. " + SHIFT + S",
     hl.dsp.exec_cmd(
-        [[grim -g "$(slurp)" - | tee "]] ..
+        [[grim -g "$(slurp -w 0 -b 00000088)" - | tee "]] ..
         screenshot_dir ..
         [[/$(date +%Y%m%d_%H%M%S).png" | wl-copy && ]] ..
         ipc ..
