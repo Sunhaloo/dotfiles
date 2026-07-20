@@ -16,7 +16,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # Paths
 export PATH="$PATH:$HOME/.local/bin"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
-export STARSHIP_CACHE="$XDG_CACHE_HOME/starship/"
+export STARSHIP_CACHE="$XDG_CACHE_HOME_HOME/starship/"
 
 
 # Options
@@ -25,8 +25,11 @@ SAVEHIST=7500
 HISTCONTROL=ignoreboth
 HISTFILE="$XDG_CACHE_HOME/zsh_history"
 
+# Load zsh completion system
+autoload -Uz compinit
+compinit
 
-# Load 'zsh-syntax-highlighting' and 'zsh-autosuggestions'
+# Load zsh-syntax-highlighting and zsh-autosuggestions
 if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
@@ -42,7 +45,8 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 
 
-# == Aliases ==
+# Aliases
+
 # system tools
 alias ls='eza --no-user --no-time --no-permissions --icons=always'
 alias ll='eza -la --no-user --no-time --no-permissions --icons=always'
@@ -54,7 +58,8 @@ alias nv="nvim"
 # functions
 alias t="$HOME/.config/tmux/scripts/tmux_startup.sh"
 
-# == Keybindings ==
+# Keybindings
+
 # use control + left / right arrow key to move cursor
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
@@ -62,3 +67,10 @@ bindkey '^[[1;5D' backward-word
 # use home / end keys to move cursor to beginning / end of line
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
+
+
+# Applications - Enviroments
+
+# UV package manager
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
