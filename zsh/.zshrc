@@ -50,7 +50,7 @@ eval "$(starship init zsh)"
 # system tools
 alias ls='eza --no-user --no-time --no-permissions --icons=always'
 alias ll='eza -la --no-user --no-time --no-permissions --icons=always'
-alias lt='eza -T --icons=always'
+alias lt='eza --all -T --icons=always'
 
 # terminal applications
 alias nv="nvim"
