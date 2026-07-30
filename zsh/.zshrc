@@ -16,7 +16,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # Paths
 export PATH="$PATH:$HOME/.local/bin"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
-export STARSHIP_CACHE="$XDG_CACHE_HOME_HOME/starship/"
+export STARSHIP_CACHE="$XDG_CACHE_HOME/starship/"
 
 
 # Options
