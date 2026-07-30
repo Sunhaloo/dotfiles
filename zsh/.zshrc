@@ -45,12 +45,33 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 
 
+# FZF Customisations
+
+# FZF - FD helper variable to exclude directories
+FZF_FD_EXCLUDE="--exclude .git --exclude .cache --exclude node_modules --exclude .venv --exclude venv"
+
+# FZF default options when running `fzf` command (basically appearance)
+export FZF_DEFAULT_OPTS="--height 85% --layout=reverse --border=rounded"
+# FZF default command when running `fzf` ==> uses `fd` as a `find` replacement
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix $FZF_FD_EXCLUDE"
+# FZF command history --> removal of shell history event numbers
+export FZF_CTRL_R_OPTS="--with-nth=2.."
+# FZF file search options ==> uses `bat` as a better `cat` replacement
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :200 {}'"
+# FZF file search command ==> reuses FZF_DEFAULT_COMMAND (same excludes, no duplication)
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# FZF folder search options ==> uses `eza` with tree flag, depth-capped for performance
+export FZF_ALT_C_OPTS="--preview 'eza -T --level=2 --color=always --icons=always {} | head -200'"
+# FZF folder search command ==> directories only, same exclude list as default
+export FZF_ALT_C_COMMAND="fd --type d --hidden --strip-cwd-prefix $FZF_FD_EXCLUDE"
+
+
 # Aliases
 
 # system tools
 alias ls='eza --no-user --no-time --no-permissions --icons=always'
 alias ll='eza -la --no-user --no-time --no-permissions --icons=always'
-alias lt='eza --all -T --icons=always'
+alias lt='eza -T --all --icons=always'
 
 # terminal applications
 alias nv="nvim"
