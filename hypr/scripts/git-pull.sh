@@ -113,7 +113,7 @@ done
 # to get repository name and also error message
 
 # INFO:
-# the main reason for doing this is how dunst's urgent notifications works
+# the main reason for doing this is how "generally" urgent notifications works
 # it pushes "urgent" notification at the top of the stack
 # but given that I want to display the "success" first, we have to do this
 
