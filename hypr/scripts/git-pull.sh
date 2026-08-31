@@ -2,8 +2,6 @@
 
 # WARNING: need to sleep the script to allow everything to load up ( WiFi, etc )!
 notify-send "GitHub Pull Script Starting..."
-
-# so that systems can be intialised in order to actually `git pull`
 sleep 2
 
 # paths "constants"
@@ -34,13 +32,13 @@ run_command() {
 
 # helper function to check if directory exists
 check_dir_existence() {
-  local repository_directory="$1"
+  local directory="$1"
 
-  # check if the directory / git repository exists
-  if [[ -d "$REPO_DIR/$repository_directory" ]]; then
+  # check if the directory exists
+  if [[ -d "$REPO_DIR/$directory" ]]; then
     return 0
   else
-    printf "Error: Could not find ( local ) repository directory '$repository_directory'\n"
+    printf "Error: Could not find ( local ) repository directory '$directory'\n"
     return 1
   fi
 }
@@ -83,7 +81,7 @@ send_notification() {
   local repo_name="$2"
   local urgency="${3:-normal}"
 
-  # send the notification ( in my case Noctalia shell )
+  # send the notification ( in my case 'noctalia', which owns org.freedesktop.Notifications )
   notify-send -u "$urgency" -t 3500 "$repo_name" "$output"
 }
 
@@ -113,7 +111,7 @@ done
 # to get repository name and also error message
 
 # INFO:
-# the main reason for doing this is how "generally" urgent notifications works
+# the main reason for doing this is how dunst's urgent notifications works
 # it pushes "urgent" notification at the top of the stack
 # but given that I want to display the "success" first, we have to do this
 

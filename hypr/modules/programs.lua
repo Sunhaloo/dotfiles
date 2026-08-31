@@ -2,9 +2,8 @@
 
 return {
 	-- Launcher
-	launcher = " launcher toggle",
-	command_launcher = " launcher command",
-	session_launcher = " sessionMenu toggle",
+	launcher = " panel-toggle launcher",
+	session_launcher = " panel-toggle launcher /session",
 
 	-- Main programs
 	browser = "thorium-browser",
@@ -12,16 +11,19 @@ return {
 	notes = "obsidian",
 	terminal = "kitty",
 
+	-- Utility Programs
+	colour_picker = "hyprpicker | wl-copy",
+
 	-- Misc Launcher
-	clipboard = " launcher clipboard",
-	clipboard_clear = "cliphist wipe",
-	emojis = " launcher emoji",
+	clipboard = " panel-toggle clipboard",
+	clipboard_clear = " clipboard-clear",
+	emojis = " panel-toggle launcher /emo",
 	noctalia_bar = " bar toggle",
-	noctalia_settings = " settings toggle",
-	notifications_panel = " notifications toggleHistory",
-	notifications_panel_clear = " notifications clear",
-	wallpaper = " wallpaper toggle",
+	noctalia_settings = " settings-open",
+	notifications_panel = " panel-toggle control-center notifications",
+	notifications_panel_clear = " notification-clear-history",
+	wallpaper = " panel-toggle wallpaper",
 
 	-- Security and Privacy
-	lockscreen = " lockScreen lock",
+	lockscreen = " session lock",
 }

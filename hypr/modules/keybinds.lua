@@ -4,7 +4,7 @@
 local programs = require("modules.programs")
 
 -- Noctalia inter-process commmunication call
-local ipc = "qs -c noctalia-shell ipc call"
+local ipc = "noctalia msg"
 
 -- Screenshot Directory
 local screenshot_dir = os.getenv("HOME") .. "/Screenshots"
@@ -27,18 +27,18 @@ hl.bind(mod .. " + Q", hl.dsp.window.close())
 -- hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),   { locked = true, repeating = true })
 
 -- Hardware: Volume Controls ( Noctalia's IPC )
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. " volume increase"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. " volume decrease"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. " volume muteOutput"), { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(ipc .. " volume muteInput"), { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. " volume-up"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. " volume-down"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. " volume-mute"), { locked = true, repeating = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(ipc .. " mic-mute"), { locked = true, repeating = true })
 
 -- Hardware: Brightness Controls ( Hyprland's Default - Requires `brightnessctl` )
 -- hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 1%+"),                  { locked = true, repeating = true })
 -- hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 1%-"),                  { locked = true, repeating = true })
 
 -- Hardware: Brightness Controls ( Noctalia's IPC )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. " brightness increase"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. " brightness decrease"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. " brightness-up"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. " brightness-down"), { locked = true, repeating = true })
 
 -- Hardware: Audio Controls ( Hyprland's Default -- Requires `playerctl` )
 -- hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
@@ -47,10 +47,10 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. " brightness decrease"),
 -- hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
 -- Hardware: Audio Controls ( Noctalia's IPC )
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd(ipc .. " media next"), { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd(ipc .. " media playPause"), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc .. " media play"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(ipc .. " media previous"), { locked = true })
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd(ipc .. " media next"), { locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc .. " media play"), { locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd(ipc .. " media pause"), { locked = true })
 
 -- Hardware: Mouse
 hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -89,10 +89,8 @@ hl.bind(alt .. " + SHIFT + P", hl.dsp.window.pseudo())
 
 -- Applications: Launchers
 hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(ipc .. programs.launcher))
-
--- INFO: Now that we are able to do everything ( poweroff, etc ) from the program launcher... Do we really need these below?
--- hl.bind(alt .. " + SPACE", hl.dsp.exec_cmd(programs.command_launcher)) -- try to use session launcher instead
--- hl.bind(alt .. " + SPACE", hl.dsp.exec_cmd(ipc .. programs.session_launcher))
+hl.bind(alt .. " + SPACE", hl.dsp.exec_cmd(ipc .. programs.session_launcher))
+hl.bind(mod .. " + PERIOD", hl.dsp.exec_cmd(ipc .. programs.emojis))
 
 -- Applications: Programs
 hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(programs.terminal))
@@ -100,14 +98,16 @@ hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd(programs.browser))
 hl.bind(mod .. " + SHIFT + T", hl.dsp.exec_cmd(programs.file_manager))
 hl.bind(mod .. " + SHIFT + O", hl.dsp.exec_cmd(programs.notes))
 
+-- Applications: Utilities
+hl.bind(alt .. " + SHIFT + H", hl.dsp.exec_cmd(programs.colour_picker))
+
 -- Applications: Misc
-hl.bind(mod .. " + PERIOD", hl.dsp.exec_cmd(ipc .. programs.emojis))
 hl.bind(mod .. " + W", hl.dsp.exec_cmd(ipc .. programs.noctalia_bar))
 hl.bind(mod .. " + COMMA", hl.dsp.exec_cmd(ipc .. programs.noctalia_settings))
 hl.bind(mod .. " + SHIFT + N", hl.dsp.exec_cmd(ipc .. programs.notifications_panel))
 
 hl.bind(alt .. " + SHIFT + V", hl.dsp.exec_cmd(ipc .. programs.clipboard))
-hl.bind(alt .. " + SHIFT + C", hl.dsp.exec_cmd(programs.clipboard_clear))
+hl.bind(alt .. " + SHIFT + C", hl.dsp.exec_cmd(ipc .. programs.clipboard_clear))
 hl.bind(alt .. " + SHIFT + W", hl.dsp.exec_cmd(ipc .. programs.wallpaper))
 hl.bind(alt .. " + SHIFT + N", hl.dsp.exec_cmd(ipc .. programs.notifications_panel_clear))
 

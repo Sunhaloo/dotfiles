@@ -14,10 +14,10 @@ hl.config({
 		-- gaps_out = 10,
 
 		-- noctalia recommended settings
-		gaps_in = 5,
-		gaps_out = 10,
+		gaps_in = 4,
+		gaps_out = 8,
 
-		border_size = 3,
+		border_size = 2,
 
 		col = {
 			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
