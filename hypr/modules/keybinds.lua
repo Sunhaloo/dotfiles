@@ -90,6 +90,7 @@ hl.bind(alt .. " + SHIFT + P", hl.dsp.window.pseudo())
 -- Applications: Launchers
 hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(ipc .. programs.launcher))
 hl.bind(alt .. " + SPACE", hl.dsp.exec_cmd(ipc .. programs.session_launcher))
+hl.bind(mod .. " + SHIFT + C", hl.dsp.exec_cmd(ipc .. programs.control_panel))
 hl.bind(mod .. " + PERIOD", hl.dsp.exec_cmd(ipc .. programs.emojis))
 
 -- Applications: Programs
@@ -112,27 +113,8 @@ hl.bind(alt .. " + SHIFT + W", hl.dsp.exec_cmd(ipc .. programs.wallpaper))
 hl.bind(alt .. " + SHIFT + N", hl.dsp.exec_cmd(ipc .. programs.notifications_panel_clear))
 
 -- Screenshots: Fullscreen + Region
-hl.bind(
-	"PRINT",
-	hl.dsp.exec_cmd(
-		[[grim - | tee "]]
-			.. screenshot_dir
-			.. [[/$(date +%Y%m%d_%H%M%S).png" | wl-copy && ]]
-			.. ipc
-			.. [[ toast send '{"title":"Screenshot","body":"Fullscreen screenshot copied and saved"}']]
-	)
-)
-
-hl.bind(
-	mod .. " + SHIFT + S",
-	hl.dsp.exec_cmd(
-		[[grim -g "$(slurp -w 0 -b 00000088)" - | tee "]]
-			.. screenshot_dir
-			.. [[/$(date +%Y%m%d_%H%M%S).png" | wl-copy && ]]
-			.. ipc
-			.. [[ toast send '{"title":"Screenshot","body":"Selection copied and saved"}']]
-	)
-)
+hl.bind("PRINT", hl.dsp.exec_cmd(ipc .. programs.screenshot_full))
+hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd(ipc .. programs.screenshot_region))
 
 -- Security and Privacy
 hl.bind(alt .. " + SHIFT + L", hl.dsp.exec_cmd(ipc .. programs.lockscreen))

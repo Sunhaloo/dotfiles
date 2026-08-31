@@ -5,20 +5,20 @@
 -- https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/
 
 -- Monitor: Generic
-hl.monitor({
-	output = "",
-	mode = "preferred",
-	position = "auto",
-	scale = "auto",
-})
-
--- Monitor: MSI Katana 15 B13V
 -- hl.monitor({
 -- 	output = "",
--- 	mode = "1920x1080@144",
+-- 	mode = "preferred",
 -- 	position = "auto",
--- 	scale = 1,
+-- 	scale = "auto",
 -- })
+
+-- Monitor: MSI Katana 15 B13V
+hl.monitor({
+	output = "",
+	mode = "1920x1080@144",
+	position = "auto",
+	scale = 1,
+})
 
 -- Input Devices
 hl.config({

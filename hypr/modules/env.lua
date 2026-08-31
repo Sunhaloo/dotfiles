@@ -17,5 +17,11 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("XCURSOR_SIZE", "16")
 hl.env("HYPRCURSOR_SIZE", "16")
 
+-- hl.env("XCURSOR_SIZE", "24")
+-- hl.env("HYPRCURSOR_SIZE", "24")
+
+-- hl.env("XCURSOR_SIZE", "32")
+-- hl.env("HYPRCURSOR_SIZE", "32")
+
 -- Noctalia Related
 hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
